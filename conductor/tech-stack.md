@@ -5,8 +5,13 @@ This tech stack defines the primary technologies used in the HeatxMK project. It
 
 ## Backend
 - **Python 3.9:** Used for the core logic, API development, and any backend processes.
-- **Framework:** To be determined based on specific backend requirements.
+- **FastAPI:** Modern, high-performance web framework for building APIs.
 
 ## Frontend
 - **HTML:** Used for the structure of the web UI.
-- **JavaScript:** Used for any dynamic frontend logic or interactions.
+- **JavaScript:** Used for dynamic frontend logic and the spinner animation.
+- **Vanilla CSS:** Minimalist and high-contrast styling.
+
+## Deployment & Networking
+- **Local Hosting:** The application will run on a local host and port.
+- **ngrok:** Used to tunnel the local server to a public URL, allowing players to access the app on race night from their own devices.
