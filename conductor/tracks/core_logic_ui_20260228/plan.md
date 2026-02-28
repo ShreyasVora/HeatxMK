@@ -1,9 +1,9 @@
 # Plan: Implement Item Logic and Spinner UI
 
 ## Phase 1: Backend Item Engine (FastAPI)
-- [ ] Task: Set up Python environment with FastAPI
-    - [ ] Initialize project and `requirements.txt` with `fastapi` and `uvicorn`
-    - [ ] Create basic app structure (`main.py`)
+- [x] Task: Set up Python environment with FastAPI 8e35674
+    - [x] Initialize project and `requirements.txt` with `fastapi` and `uvicorn`
+    - [x] Create basic app structure (`main.py`)
 - [ ] Task: Implement flexible item selection logic
     - [ ] Create `items_config.json` to store item names and base weights
     - [ ] Write unit tests for the selection logic (verifying probability shifts based on distance)
