@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "name": "Mushroom",
+      "base_weight": 50,
+      "distance_multiplier": 1.2
+    },
+    {
+      "name": "Red Shell",
+      "base_weight": 30,
+      "distance_multiplier": 0.8
+    },
+    {
+      "name": "Star",
+      "base_weight": 10,
+      "distance_multiplier": 2.5
+    },
+    {
+      "name": "Blue Shell",
+      "base_weight": 5,
+      "distance_multiplier": 5.0
+    },
+    {
+      "name": "Banana",
+      "base_weight": 40,
+      "distance_multiplier": 0.5
+    }
+  ]
+}
