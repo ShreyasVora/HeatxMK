@@ -4,10 +4,10 @@
 - [x] Task: Set up Python environment with FastAPI 8e35674
     - [x] Initialize project and `requirements.txt` with `fastapi` and `uvicorn`
     - [x] Create basic app structure (`main.py`)
-- [ ] Task: Implement flexible item selection logic
-    - [ ] Create `items_config.json` to store item names and base weights
-    - [ ] Write unit tests for the selection logic (verifying probability shifts based on distance)
-    - [ ] Implement `ItemEngine` class that reads from the config and selects an item
+- [x] Task: Implement flexible item selection logic aae9c6b
+    - [x] Create `items_config.json` to store item names and base weights
+    - [x] Write unit tests for the selection logic (verifying probability shifts based on distance)
+    - [x] Implement `ItemEngine` class that reads from the config and selects an item
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Backend Item Engine' (Protocol in workflow.md)
 
 ## Phase 2: API and Integration
