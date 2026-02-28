@@ -1,17 +1,19 @@
-# Product Definition: HeatxMK
+# Product Definition: HeatxMK (Heat: Pedal to the Metal Mario Kart Mod)
 
 ## Overview
-HeatxMK is a standalone application for end users that focuses on core functionality through API and external integration. It provides a robust and efficient experience for its users by automating key processes and providing a modern, intuitive interface.
+HeatxMK is a web-based companion app for a real-life modification of the board game *Heat: Pedal to the Metal*. It introduces a "Mario Kart" style item system where players collect items from boxes on the track. The app acts as a digital randomizer (spinner) that determines which item a player receives based on their current standing in the race.
 
 ## Target Audience
-- **End Users:** People who want a simple, direct experience with the tool.
+- **Real-life Players:** People playing the physical board game who need a quick, interactive way to determine their items without complex manual tables.
 
 ## Primary Goal
-- **Application Core Functionality:** To create a user-facing application for a specific task.
+- **Item Selection Logic:** To provide a digital "spinner" that calculates and displays a random item based on the player's distance from first place and other game variables.
 
 ## Key Features
-- **API/External Integration:** Integrating with external services or APIs.
-- **Automation Logic:** Automating repetitive or complex tasks.
+- **Dynamic Input:** A web UI where users specify the distance between them and the race leader.
+- **Randomized Spinner:** An interactive UI element that "spins" through items before landing on the selected one.
+- **Python Logic Engine:** A backend that handles the probability distribution of items (e.g., players further back get more powerful "catch-up" items).
+- **Physical Token Integration:** The app tells the user which physical token to pull from their bag.
 
 ## Deployment & Integration
-- **Standalone Application:** Running as a standalone tool on the user's machine.
+- **Standalone Web App:** A Python backend (FastAPI/Flask) serving a simple HTML/JS frontend, accessible via a local network or hosted simply.
