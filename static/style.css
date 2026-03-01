@@ -193,6 +193,46 @@ main {
     color: #007bff;
 }
 
+.weight-readout {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-color);
+    text-align: left;
+}
+
+.weight-readout h3 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.weight-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.weight-item {
+    background: var(--bg-color);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weight-item .item-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.weight-item .item-val {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
