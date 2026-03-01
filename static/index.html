@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeatxMK - Item Spinner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HeatxMK</h1>
+            <p>Mario Kart Mod for Heat: Pedal to the Metal</p>
+        </header>
+
+        <main>
+            <div class="input-group">
+                <label for="distance">Distance to First Place</label>
+                <input type="number" id="distance" min="0" value="0">
+            </div>
+
+            <div class="spinner-container">
+                <div id="item-display" class="item-display">READY?</div>
+            </div>
+
+            <button id="spin-button">GET ITEM</button>
+        </main>
+
+        <footer>
+            <p>Specify distance and spin for your item</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
