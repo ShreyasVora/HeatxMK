@@ -1,0 +1,8 @@
+{
+  "general": {
+    "vimMode": true
+  },
+  "security": {
+    "enablePermanentToolApproval": true
+  }
+}
