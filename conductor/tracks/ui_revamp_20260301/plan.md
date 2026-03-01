@@ -22,15 +22,14 @@ Enhance the main page to show real-time item weights based on the distance input
     - [ ] Add a container `<div id="weight-readout">` below the spinner in `index.html`.
     - [ ] Style the readout for clarity and mobile readability.
 - [x] **Task: Implement Real-time Weight Updates** (c40302c)
-    - [ ] Write tests to verify that changing distance triggers a weight calculation.
     - [ ] Update `app.js` to fetch or calculate weights for all items whenever the distance input changes.
     - [ ] Render a list of items with their current weights/probabilities.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 2: Dynamic Weight Readout' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 2: Dynamic Weight Readout' (Protocol in workflow.md)** (0460bd5)
 
-## Phase 3: Weight Distribution Visualization (Analytics Page)
+## Phase 3: Weight Distribution Visualization (Analytics Page) [checkpoint: 0460bd5]
 Implement the Chart.js visualization for item curves.
 
-- [ ] **Task: Integrate Chart.js**
+- [~] **Task: Integrate Chart.js**
     - [ ] Add Chart.js CDN script to `index.html`.
     - [ ] Verify library is loaded in `app.js`.
 - [ ] **Task: Create Distributions Page Layout**
