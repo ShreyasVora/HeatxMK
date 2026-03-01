@@ -39,6 +39,36 @@ document.addEventListener('DOMContentLoaded', () => {
     const spinButton = document.getElementById('spin-button');
     const itemDisplay = document.getElementById('item-display');
     const distanceInput = document.getElementById('distance');
+    const weightList = document.getElementById('weight-list');
+
+    async function updateWeights() {
+        const distance = parseInt(distanceInput.value) || 0;
+        if (distance < 0) return;
+
+        try {
+            const response = await fetch(`/api/weights?distance=${distance}`);
+            const data = await response.json();
+            
+            weightList.innerHTML = data.weights.map(item => `
+                <div class="weight-item">
+                    <span class="item-name">${item.name}</span>
+                    <span class="item-val">${item.chance}%</span>
+                </div>
+            `).join('');
+        } catch (error) {
+            console.error("Failed to fetch weights:", error);
+        }
+    }
+
+    // Debounce to prevent too many API calls
+    let timeout = null;
+    distanceInput.addEventListener('input', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(updateWeights, 300);
+    });
+
+    // Initial update
+    updateWeights();
 
     const commonItems = ["Mushroom", "Banana", "Red Shell", "Green Shell", "Star", "Blue Shell", "Lightning"];
 
