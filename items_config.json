@@ -1,29 +1,56 @@
 {
   "items": [
     {
-      "name": "Mushroom",
-      "base_weight": 50,
-      "distance_multiplier": 1.2
+      "name": "Banana",
+      "weight_curve": [
+        [0, 60],
+        [20, 30],
+        [40, 0]
+      ]
     },
     {
       "name": "Red Shell",
-      "base_weight": 30,
-      "distance_multiplier": 0.8
+      "weight_curve": [
+        [0, 40],
+        [30, 40],
+        [60, 10],
+        [80, 0]
+      ]
+    },
+    {
+      "name": "Mushroom",
+      "weight_curve": [
+        [0, 20],
+        [30, 50],
+        [100, 30]
+      ]
     },
     {
       "name": "Star",
-      "base_weight": 10,
-      "distance_multiplier": 2.5
+      "weight_curve": [
+        [0, 0],
+        [40, 0],
+        [60, 20],
+        [100, 50]
+      ]
     },
     {
       "name": "Blue Shell",
-      "base_weight": 5,
-      "distance_multiplier": 5.0
+      "weight_curve": [
+        [0, 0],
+        [30, 0],
+        [50, 10],
+        [100, 30]
+      ]
     },
     {
-      "name": "Banana",
-      "base_weight": 40,
-      "distance_multiplier": 0.5
+      "name": "Rocket",
+      "weight_curve": [
+        [0, 0],
+        [60, 0],
+        [80, 20],
+        [120, 80]
+      ]
     }
   ]
 }
