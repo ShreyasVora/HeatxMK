@@ -1,0 +1,8 @@
+{
+  "track_id": "ui_revamp_20260301",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-01T18:45:00Z",
+  "updated_at": "2026-03-01T18:45:00Z",
+  "description": "Revamp the web interface to have multiple pages, and extra info displayed to the user. There should be a different page to see the item weight distributions, where it plots the linear graphs and displays them for each item. There should be a selector on the LHS of the page to select the item."
+}
