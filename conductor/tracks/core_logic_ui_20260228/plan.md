@@ -8,7 +8,7 @@
     - [x] Create `items_config.json` to store item names and base weights
     - [x] Write unit tests for the selection logic (verifying probability shifts based on distance)
     - [x] Implement `ItemEngine` class that reads from the config and selects an item
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Backend Item Engine' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Backend Item Engine' (Protocol in workflow.md) 3655bf4
 
 ## Phase 2: API and Integration
 - [ ] Task: Create FastAPI endpoint for item retrieval
