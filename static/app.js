@@ -27,9 +27,89 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => switchView(btn.dataset.view));
     });
 
-    // Placeholder for distribution view logic
-    function initializeDistributionsView() {
-        console.log("Distributions view initialized");
+    // Distribution View Logic
+    let itemConfig = null;
+    let chartInstance = null;
+
+    async function initializeDistributionsView() {
+        if (!itemConfig) {
+            try {
+                const response = await fetch('/api/config');
+                itemConfig = await response.json();
+                populateItemSelector();
+            } catch (error) {
+                console.error("Failed to load item config:", error);
+            }
+        }
+    }
+
+    function populateItemSelector() {
+        const itemList = document.getElementById('item-list');
+        itemList.innerHTML = itemConfig.items.map(item => `
+            <li data-name="${item.name}">${item.name}</li>
+        `).join('');
+
+        itemList.querySelectorAll('li').forEach(li => {
+            li.addEventListener('click', () => {
+                itemList.querySelectorAll('li').forEach(el => el.classList.remove('active'));
+                li.classList.add('active');
+                renderCurve(li.dataset.name);
+            });
+        });
+
+        // Select first item by default
+        if (itemConfig.items.length > 0) {
+            itemList.querySelector('li').click();
+        }
+    }
+
+    function renderCurve(itemName) {
+        const item = itemConfig.items.find(i => i.name === itemName);
+        if (!item) return;
+
+        const ctx = document.getElementById('distribution-chart').getContext('2d');
+        
+        // Transform curve [distance, weight] to Chart.js data
+        const data = item.weight_curve.map(p => ({ x: p[0], y: p[1] }));
+
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+
+        chartInstance = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: `${itemName} Weight Distribution`,
+                    data: data,
+                    borderColor: '#007bff',
+                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                    fill: true,
+                    tension: 0, // Linear interpolation
+                    pointRadius: 5,
+                    pointHoverRadius: 7
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        title: { display: true, text: 'Distance to First Place' },
+                        min: 0,
+                        max: 120
+                    },
+                    y: {
+                        title: { display: true, text: 'Weight' },
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: { display: true, position: 'top' }
+                }
+            }
+        });
     }
 
     // Make switchView globally accessible for testing
