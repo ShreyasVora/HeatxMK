@@ -11,9 +11,9 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Backend Item Engine' (Protocol in workflow.md) 3655bf4
 
 ## Phase 2: API and Integration
-- [ ] Task: Create FastAPI endpoint for item retrieval
-    - [ ] Implement `GET /item` endpoint accepting `distance` parameter
-    - [ ] Add basic validation (e.g., distance must be non-negative)
+- [x] Task: Create FastAPI endpoint for item retrieval bca9404
+    - [x] Implement `GET /item` endpoint accepting `distance` parameter
+    - [x] Add basic validation (e.g., distance must be non-negative)
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: API and Integration' (Protocol in workflow.md)
 
 ## Phase 3: Spinner UI Implementation
