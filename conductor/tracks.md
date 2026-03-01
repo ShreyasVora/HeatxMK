@@ -9,6 +9,6 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Revamp the web interface with multiple pages and distribution visualization**
+- [x] **Track: Revamp the web interface with multiple pages and distribution visualization**
   *Link: [./tracks/ui_revamp_20260301/](./tracks/ui_revamp_20260301/)*
 

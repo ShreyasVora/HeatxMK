@@ -46,7 +46,7 @@ Refine the UI and ensure everything works perfectly on mobile devices.
 - [x] **Task: UI/UX Refinement** (04f5bbf)
     - [ ] Apply consistent styling to the new components.
     - [ ] Ensure touch targets for the LHS selector are adequate (44x44px).
-- [~] **Task: Final Verification**
+- [x] **Task: Final Verification** (f53b3ab)
     - [ ] Run full test suite.
     - [ ] Perform end-to-end manual check of all features.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Mobile Optimization' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Mobile Optimization' (Protocol in workflow.md)** (886e50b)
