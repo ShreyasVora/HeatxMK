@@ -18,10 +18,10 @@ This phase focuses on restructuring the existing `index.html` and `app.js` to su
 ## Phase 2: Dynamic Weight Readout (Spinner Page)
 Enhance the main page to show real-time item weights based on the distance input.
 
-- [~] **Task: Create Weight Readout UI**
+- [x] **Task: Create Weight Readout UI** (016b157)
     - [ ] Add a container `<div id="weight-readout">` below the spinner in `index.html`.
     - [ ] Style the readout for clarity and mobile readability.
-- [ ] **Task: Implement Real-time Weight Updates**
+- [~] **Task: Implement Real-time Weight Updates**
     - [ ] Write tests to verify that changing distance triggers a weight calculation.
     - [ ] Update `app.js` to fetch or calculate weights for all items whenever the distance input changes.
     - [ ] Render a list of items with their current weights/probabilities.
