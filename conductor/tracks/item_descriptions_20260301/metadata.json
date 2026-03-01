@@ -1,0 +1,8 @@
+{
+  "track_id": "item_descriptions_20260301",
+  "type": "feature",
+  "status": "new",
+  "created_at": "2026-03-01T23:05:00Z",
+  "updated_at": "2026-03-01T23:05:00Z",
+  "description": "I would like to add some tooltips / sidebars which show what the item does in the context of Heat. This will be specified in the json file under a "description" section, which I will need to fill out for each item. This text should then display somewhere on the page when you collect an item. Also on the page which shows the weightings of each item, when you select one, there should also be a section which shows the description, perhaps below the graph."
+}
