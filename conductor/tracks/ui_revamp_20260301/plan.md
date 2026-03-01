@@ -29,13 +29,13 @@ Enhance the main page to show real-time item weights based on the distance input
 ## Phase 3: Weight Distribution Visualization (Analytics Page) [checkpoint: 0460bd5]
 Implement the Chart.js visualization for item curves.
 
-- [~] **Task: Integrate Chart.js**
+- [x] **Task: Integrate Chart.js** (f14f48e)
     - [ ] Add Chart.js CDN script to `index.html`.
     - [ ] Verify library is loaded in `app.js`.
-- [ ] **Task: Create Distributions Page Layout**
+- [x] **Task: Create Distributions Page Layout** (f14f48e)
     - [ ] Implement the LHS item selector (list of item names).
     - [ ] Implement the RHS `<canvas id="distribution-chart">`.
-- [ ] **Task: Implement Curve Plotting Logic**
+- [x] **Task: Implement Curve Plotting Logic** (f14f48e)
     - [ ] Write tests for the data transformation logic (Curve points -> Chart.js dataset).
     - [ ] Implement `renderCurve(itemName)` which fetches the `weight_curve` from the config and plots it.
     - [ ] Ensure the chart updates smoothly when a new item is selected.
