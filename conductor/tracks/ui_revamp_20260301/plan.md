@@ -2,23 +2,23 @@
 
 This plan covers the transformation of the HeatxMK web interface into a multi-tabbed SPA with real-time analytics and item weight visualization.
 
-## Phase 1: SPA Foundation & Navigation
+## Phase 1: SPA Foundation & Navigation [checkpoint: f509b66]
 This phase focuses on restructuring the existing `index.html` and `app.js` to support tabbed navigation.
 
 - [x] **Task: Define SPA Structure in HTML** (6f60192)
     - [ ] Create a `<nav>` element with buttons for "Spinner" and "Distributions".
     - [ ] Wrap existing spinner content in a `<section id="view-spinner">`.
     - [ ] Create an empty `<section id="view-distributions" style="display:none">`.
-- [ ] **Task: Implement Tab Switching Logic**
+- [x] **Task: Implement Tab Switching Logic** (e5347cc)
     - [ ] Write tests in `static/test_app.js` (or similar) to verify tab visibility toggling.
     - [ ] Implement `switchView(viewId)` function in `app.js`.
     - [ ] Add event listeners to nav buttons.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 1: SPA Foundation & Navigation' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 1: SPA Foundation & Navigation' (Protocol in workflow.md)** (f509b66)
 
 ## Phase 2: Dynamic Weight Readout (Spinner Page)
 Enhance the main page to show real-time item weights based on the distance input.
 
-- [ ] **Task: Create Weight Readout UI**
+- [~] **Task: Create Weight Readout UI**
     - [ ] Add a container `<div id="weight-readout">` below the spinner in `index.html`.
     - [ ] Style the readout for clarity and mobile readability.
 - [ ] **Task: Implement Real-time Weight Updates**
