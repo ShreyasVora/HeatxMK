@@ -21,7 +21,7 @@ Enhance the main page to show real-time item weights based on the distance input
 - [x] **Task: Create Weight Readout UI** (016b157)
     - [ ] Add a container `<div id="weight-readout">` below the spinner in `index.html`.
     - [ ] Style the readout for clarity and mobile readability.
-- [~] **Task: Implement Real-time Weight Updates**
+- [x] **Task: Implement Real-time Weight Updates** (c40302c)
     - [ ] Write tests to verify that changing distance triggers a weight calculation.
     - [ ] Update `app.js` to fetch or calculate weights for all items whenever the distance input changes.
     - [ ] Render a list of items with their current weights/probabilities.
