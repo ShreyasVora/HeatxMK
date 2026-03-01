@@ -36,15 +36,14 @@ Implement the Chart.js visualization for item curves.
     - [ ] Implement the LHS item selector (list of item names).
     - [ ] Implement the RHS `<canvas id="distribution-chart">`.
 - [x] **Task: Implement Curve Plotting Logic** (f14f48e)
-    - [ ] Write tests for the data transformation logic (Curve points -> Chart.js dataset).
-    - [ ] Implement `renderCurve(itemName)` which fetches the `weight_curve` from the config and plots it.
-    - [ ] Ensure the chart updates smoothly when a new item is selected.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 3: Weight Distribution Visualization' (Protocol in workflow.md)**
+    - [ ] Update `app.js` to fetch or calculate weights for all items whenever the distance input changes.
+    - [ ] Render a list of items with their current weights/probabilities.
+- [x] **Task: Conductor - User Manual Verification 'Phase 3: Weight Distribution Visualization' (Protocol in workflow.md)** (16c5dcc)
 
-## Phase 4: Final Polishing & Mobile Optimization
+## Phase 4: Final Polishing & Mobile Optimization [checkpoint: 16c5dcc]
 Refine the UI and ensure everything works perfectly on mobile devices.
 
-- [ ] **Task: UI/UX Refinement**
+- [~] **Task: UI/UX Refinement**
     - [ ] Apply consistent styling to the new components.
     - [ ] Ensure touch targets for the LHS selector are adequate (44x44px).
 - [ ] **Task: Final Verification**
