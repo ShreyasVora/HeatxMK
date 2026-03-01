@@ -5,7 +5,7 @@ This plan covers the transformation of the HeatxMK web interface into a multi-ta
 ## Phase 1: SPA Foundation & Navigation
 This phase focuses on restructuring the existing `index.html` and `app.js` to support tabbed navigation.
 
-- [ ] **Task: Define SPA Structure in HTML**
+- [x] **Task: Define SPA Structure in HTML** (6f60192)
     - [ ] Create a `<nav>` element with buttons for "Spinner" and "Distributions".
     - [ ] Wrap existing spinner content in a `<section id="view-spinner">`.
     - [ ] Create an empty `<section id="view-distributions" style="display:none">`.
