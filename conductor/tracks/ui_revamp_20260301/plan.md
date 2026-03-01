@@ -43,10 +43,10 @@ Implement the Chart.js visualization for item curves.
 ## Phase 4: Final Polishing & Mobile Optimization [checkpoint: 16c5dcc]
 Refine the UI and ensure everything works perfectly on mobile devices.
 
-- [~] **Task: UI/UX Refinement**
+- [x] **Task: UI/UX Refinement** (04f5bbf)
     - [ ] Apply consistent styling to the new components.
     - [ ] Ensure touch targets for the LHS selector are adequate (44x44px).
-- [ ] **Task: Final Verification**
+- [~] **Task: Final Verification**
     - [ ] Run full test suite.
     - [ ] Perform end-to-end manual check of all features.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Mobile Optimization' (Protocol in workflow.md)**
