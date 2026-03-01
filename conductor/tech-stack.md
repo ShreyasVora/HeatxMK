@@ -11,6 +11,7 @@ This tech stack defines the primary technologies used in the HeatxMK project. It
 - **HTML:** Used for the structure of the web UI.
 - **JavaScript:** Used for dynamic frontend logic and the spinner animation.
 - **Vanilla CSS:** Minimalist and high-contrast styling.
+- **Chart.js:** Used for visualizing item weight distribution curves.
 
 ## Deployment & Networking
 - **Local Hosting:** The application will run on a local host and port.
