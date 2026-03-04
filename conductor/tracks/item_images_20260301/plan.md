@@ -8,9 +8,9 @@ Prepare the backend and configuration to support item images.
 - [x] **Task: Update Item Configuration** (6053c72)
     - [x] Update `items_config.json` to include an `image_path` field for each item.
     - [ ] Add a `placeholder.png` image to `static/images/items/`.
-- [~] **Task: Update ItemEngine for Image Metadata**
-    - [ ] Ensure the `/api/item` and `/api/weights` endpoints return the `image_path`.
-    - [ ] Write unit tests to verify that `image_path` is correctly returned by the engine.
+- [x] **Task: Update ItemEngine for Image Metadata** (0122ae1)
+    - [x] Ensure the `/api/item` and `/api/weights` endpoints return the `image_path`.
+    - [x] Write unit tests to verify that `image_path` is correctly returned by the engine.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 1: Configuration & Assets Setup' (Protocol in workflow.md)**
 
 ## Phase 2: Core UI Updates (Spinner & Readout)
