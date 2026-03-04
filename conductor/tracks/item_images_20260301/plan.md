@@ -28,11 +28,11 @@ Transform the main spinner page to use images.
 ## Phase 3: Distribution Visualization & Placeholder Fallback
 Refine the analytics page and ensure robustness.
 
-- [~] **Task: Add Images to Distribution View**
-    - [ ] Update the LHS selector to show icons next to item names.
-    - [ ] Display the item image in the graph header/legend.
-- [ ] **Task: Implement Image Fallback Logic**
-    - [ ] Create a reusable `getImagePath` function in `app.js` that returns the placeholder if the provided path is invalid or missing.
+- [x] **Task: Add Images to Distribution View** (be27c84)
+    - [x] Update the LHS selector to show icons next to item names.
+    - [x] Display the item image in the graph header/legend.
+- [x] **Task: Implement Image Fallback Logic** (be27c84)
+    - [x] Create a reusable `getImagePath` function in `app.js` that returns the placeholder if the provided path is invalid or missing.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 3: Distribution Visualization' (Protocol in workflow.md)**
 
 ## Phase 4: Final Verification & Optimization
