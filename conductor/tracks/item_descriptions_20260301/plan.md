@@ -22,7 +22,7 @@ Add the info panel to the main spinner page and display the description after a 
     - [x] Add a transition effect to show the panel once the spin is complete.
 - [x] **Task: Conductor - User Manual Verification 'Phase 2: Spinner Page Implementation' (Protocol in workflow.md)** (c93e59f)
 
-## Phase 3: Distributions Page Implementation
+## Phase 3: Distributions Page Implementation [checkpoint: eeab653]
 Add the description readout below the weight distribution graph.
 
 - [x] **Task: Create Description Container** (4e2639c)
@@ -30,12 +30,12 @@ Add the description readout below the weight distribution graph.
     - [x] Style the container for readability.
 - [x] **Task: Implement Selective Readout Logic** (336abdc)
     - [x] Update the `renderCurve` function in `app.js` to populate the description container whenever a new item is selected.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 3: Distributions Page Implementation' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 3: Distributions Page Implementation' (Protocol in workflow.md)** (eeab653)
 
 ## Phase 4: Final Polishing & Verification
 Ensure a cohesive user experience and mobile compatibility.
 
-- [ ] **Task: UI Refinement**
+- [~] **Task: UI Refinement**
     - [ ] Ensure consistent spacing and responsive behavior for the new text blocks.
     - [ ] Handle the case where an item might have a missing description.
 - [ ] **Task: Final Verification**
