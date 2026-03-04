@@ -16,11 +16,11 @@ Prepare the backend and configuration to support item images.
 ## Phase 2: Core UI Updates (Spinner & Readout)
 Transform the main spinner page to use images.
 
-- [~] **Task: Implement Spinner Image Logic**
-    - [ ] Update the `app.js` spinner animation to cycle through images.
-    - [ ] Update the final result display to show the item image.
-    - [ ] Style the spinner image for consistent sizing.
-- [ ] **Task: Implement Weight Readout Thumbnails**
+- [x] **Task: Implement Spinner Image Logic** (ad52711)
+    - [x] Update the `app.js` spinner animation to cycle through images.
+    - [x] Update the final result display to show the item image.
+    - [x] Style the spinner image for consistent sizing.
+- [~] **Task: Implement Weight Readout Thumbnails**
     - [ ] Update the "Available Items" list to include a small image for each item.
     - [ ] Style the list items to accommodate the thumbnails.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 2: Core UI Updates' (Protocol in workflow.md)**
