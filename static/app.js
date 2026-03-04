@@ -31,15 +31,21 @@ document.addEventListener('DOMContentLoaded', () => {
     let itemConfig = null;
     let chartInstance = null;
 
-    async function initializeDistributionsView() {
+    async function loadItemConfig() {
         if (!itemConfig) {
             try {
                 const response = await fetch('/api/config');
                 itemConfig = await response.json();
-                populateItemSelector();
             } catch (error) {
                 console.error("Failed to load item config:", error);
             }
+        }
+    }
+
+    async function initializeDistributionsView() {
+        await loadItemConfig();
+        if (itemConfig) {
+            populateItemSelector();
         }
     }
 
@@ -155,9 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial update
-    updateWeights();
-
-    const commonItems = ["Mushroom", "Banana", "Red Shell", "Green Shell", "Star", "Blue Shell", "Lightning"];
+    loadItemConfig().then(updateWeights);
 
     spinButton.addEventListener('click', async () => {
         const distance = parseInt(distanceInput.value) || 0;
@@ -179,9 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Animation: Cycle through items
             let cycleCount = 0;
             const maxCycles = 15;
+            const itemsToCycle = itemConfig ? itemConfig.items : [];
+            
             const interval = setInterval(() => {
-                const randomItem = commonItems[Math.floor(Math.random() * commonItems.length)];
-                itemDisplay.textContent = randomItem;
+                if (itemsToCycle.length > 0) {
+                    const randomItem = itemsToCycle[Math.floor(Math.random() * itemsToCycle.length)];
+                    itemDisplay.innerHTML = `<img src="${randomItem.image_path}" alt="${randomItem.name}" class="spinner-img">`;
+                } else {
+                    itemDisplay.textContent = "...";
+                }
                 cycleCount++;
 
                 if (cycleCount >= maxCycles) {
@@ -205,7 +215,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             
             // Set final item
-            itemDisplay.textContent = data.name;
+            if (data.metadata && data.metadata.image_path) {
+                itemDisplay.innerHTML = `<img src="${data.metadata.image_path}" alt="${data.name}" class="result-img">`;
+            } else {
+                itemDisplay.textContent = data.name;
+            }
             itemDisplay.classList.remove('spinning');
             itemDisplay.classList.add('selected');
 
