@@ -28,8 +28,8 @@ Add the description readout below the weight distribution graph.
 - [x] **Task: Create Description Container** (4e2639c)
     - [x] Add a container `<div id="chart-description">` below the canvas in the distributions section of `index.html`.
     - [x] Style the container for readability.
-- [~] **Task: Implement Selective Readout Logic**
-    - [ ] Update the `renderCurve` function in `app.js` to populate the description container whenever a new item is selected.
+- [x] **Task: Implement Selective Readout Logic** (336abdc)
+    - [x] Update the `renderCurve` function in `app.js` to populate the description container whenever a new item is selected.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 3: Distributions Page Implementation' (Protocol in workflow.md)**
 
 ## Phase 4: Final Polishing & Verification
