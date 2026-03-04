@@ -35,9 +35,9 @@ Add the description readout below the weight distribution graph.
 ## Phase 4: Final Polishing & Verification
 Ensure a cohesive user experience and mobile compatibility.
 
-- [~] **Task: UI Refinement**
-    - [ ] Ensure consistent spacing and responsive behavior for the new text blocks.
-    - [ ] Handle the case where an item might have a missing description.
-- [ ] **Task: Final Verification**
+- [x] **Task: UI Refinement** (2754e7b)
+    - [x] Ensure consistent spacing and responsive behavior for the new text blocks.
+    - [x] Handle the case where an item might have a missing description.
+- [~] **Task: Final Verification**
     - [ ] Perform a full walkthrough of both views to ensure descriptions display as expected.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Verification' (Protocol in workflow.md)**
