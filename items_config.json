@@ -2,6 +2,7 @@
   "items": [
     {
       "name": "Banana",
+      "description": "Place a banana on your current space. Any car entering this space must pay <b>1 Heat</b> or take a <b>Spin Out</b>.",
       "weight_curve": [
         [0, 60],
         [20, 30],
@@ -10,6 +11,7 @@
     },
     {
       "name": "Red Shell",
+      "description": "Target the car immediately in front of you. They must move down <b>1 Gear</b> and take <b>1 Stress</b> card.",
       "weight_curve": [
         [0, 40],
         [30, 40],
@@ -19,6 +21,7 @@
     },
     {
       "name": "Mushroom",
+      "description": "Perform an extra <b>Boost</b> this turn without paying Heat. You may also ignore 1 symbol on a corner.",
       "weight_curve": [
         [0, 20],
         [30, 50],
@@ -27,6 +30,7 @@
     },
     {
       "name": "Star",
+      "description": "Become Invincible! Move <b>+2 spaces</b>, ignore all track limits, and you cannot be affected by other items this turn.",
       "weight_curve": [
         [0, 0],
         [40, 0],
@@ -36,6 +40,7 @@
     },
     {
       "name": "Blue Shell",
+      "description": "The current race leader must immediately move to <b>1st Gear</b> and discard <b>2 cards</b> from their hand.",
       "weight_curve": [
         [0, 0],
         [30, 0],
@@ -45,6 +50,7 @@
     },
     {
       "name": "Rocket",
+      "description": "Blast forward! Move <b>+5 spaces</b> instantly. Any cars you pass must take <b>1 Stress</b> card.",
       "weight_curve": [
         [0, 0],
         [60, 0],

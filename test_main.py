@@ -10,6 +10,9 @@ def test_get_item_valid():
     assert "name" in data
     assert "distance_provided" in data
     assert data["distance_provided"] == 10
+    # Description should be present in metadata
+    assert "description" in data["metadata"]
+    assert isinstance(data["metadata"]["description"], str)
 
 def test_get_item_negative_distance():
     response = client.get("/api/item?distance=-5")
@@ -43,3 +46,4 @@ def test_get_config():
     assert "items" in data
     assert len(data["items"]) > 0
     assert "weight_curve" in data["items"][0]
+    assert "description" in data["items"][0]
