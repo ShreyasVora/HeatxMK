@@ -220,6 +220,7 @@ main {
     line-height: 1.5;
     color: #495057;
     animation: slideDown 0.3s ease-out;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .info-panel b {
