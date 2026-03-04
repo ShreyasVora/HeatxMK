@@ -13,7 +13,7 @@ Prepare the backend and configuration to support item images.
     - [x] Write unit tests to verify that `image_path` is correctly returned by the engine.
 - [x] **Task: Conductor - User Manual Verification 'Phase 1: Configuration & Assets Setup' (Protocol in workflow.md)** (92de3cc)
 
-## Phase 2: Core UI Updates (Spinner & Readout)
+## Phase 2: Core UI Updates (Spinner & Readout) [checkpoint: 34a7c7d]
 Transform the main spinner page to use images.
 
 - [x] **Task: Implement Spinner Image Logic** (ad52711)
@@ -23,12 +23,12 @@ Transform the main spinner page to use images.
 - [x] **Task: Implement Weight Readout Thumbnails** (9ebfbc6)
     - [x] Update the "Available Items" list to include a small image for each item.
     - [x] Style the list items to accommodate the thumbnails.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 2: Core UI Updates' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 2: Core UI Updates' (Protocol in workflow.md)** (34a7c7d)
 
 ## Phase 3: Distribution Visualization & Placeholder Fallback
 Refine the analytics page and ensure robustness.
 
-- [ ] **Task: Add Images to Distribution View**
+- [~] **Task: Add Images to Distribution View**
     - [ ] Update the LHS selector to show icons next to item names.
     - [ ] Display the item image in the graph header/legend.
 - [ ] **Task: Implement Image Fallback Logic**
