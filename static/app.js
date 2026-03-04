@@ -71,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCurve(itemName) {
         const item = itemConfig.items.find(i => i.name === itemName);
-        if (!item) return;
+        if (!item) {
+            return;
+        }
 
         const ctx = document.getElementById('distribution-chart').getContext('2d');
         const chartDesc = document.getElementById('chart-description');
@@ -169,7 +171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Initial update
-    loadItemConfig().then(updateWeights);
+    loadItemConfig().then(() => {
+        updateWeights();
+    });
 
     spinButton.addEventListener('click', async () => {
         const distance = parseInt(distanceInput.value) || 0;
@@ -245,6 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 1000);
 
         } catch (error) {
+            console.error("Finalize spin failed:", error);
             itemDisplay.textContent = "API ERROR";
             spinButton.disabled = false;
         }
