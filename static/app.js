@@ -68,6 +68,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!item) return;
 
         const ctx = document.getElementById('distribution-chart').getContext('2d');
+        const chartDesc = document.getElementById('chart-description');
+
+        // Update description
+        if (item.description) {
+            chartDesc.innerHTML = `<strong>${item.name}:</strong> ${item.description}`;
+            chartDesc.style.display = 'block';
+        } else {
+            chartDesc.style.display = 'none';
+        }
         
         // Transform curve [distance, weight] to Chart.js data
         const data = item.weight_curve.map(p => ({ x: p[0], y: p[1] }));
