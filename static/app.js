@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const itemDisplay = document.getElementById('item-display');
     const distanceInput = document.getElementById('distance');
     const weightList = document.getElementById('weight-list');
+    const infoPanel = document.getElementById('item-info-panel');
 
     async function updateWeights() {
         const distance = parseInt(distanceInput.value) || 0;
@@ -163,6 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Disable button during spin
         spinButton.disabled = true;
         itemDisplay.classList.add('spinning');
+        infoPanel.style.display = 'none';
 
         try {
             // Start fetch early
@@ -200,6 +202,12 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDisplay.textContent = data.name;
             itemDisplay.classList.remove('spinning');
             itemDisplay.classList.add('selected');
+
+            // Show description
+            if (data.metadata && data.metadata.description) {
+                infoPanel.innerHTML = `<strong>${data.name}:</strong> ${data.metadata.description}`;
+                infoPanel.style.display = 'block';
+            }
             
             // Brief timeout before re-enabling
             setTimeout(() => {
