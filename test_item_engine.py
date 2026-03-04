@@ -27,6 +27,32 @@ def test_item_selection_structure(config_file):
     assert "name" in item
     assert item["name"] == "Front Only"
 
+def test_image_path_returned(tmp_path):
+    config = {
+        "items": [
+            {
+                "name": "Image Item",
+                "image_path": "path/to/image.png",
+                "weight_curve": [[0, 100]]
+            }
+        ]
+    }
+    file = tmp_path / "image_config.json"
+    file.write_text(json.dumps(config))
+    engine = ItemEngine(str(file))
+    item = engine.select_item(0)
+    assert "image_path" in item
+    assert item["image_path"] == "path/to/image.png"
+
+def test_full_config_load():
+    # Verify that the engine can load the actual items_config.json
+    engine = ItemEngine("items_config.json")
+    assert len(engine.items) > 0
+    for item in engine.items:
+        assert "image_path" in item
+        assert "name" in item
+        assert "weight_curve" in item
+
 def test_impossible_items(config_file):
     engine = ItemEngine(config_file)
     
