@@ -38,9 +38,9 @@ Refine the analytics page and ensure robustness.
 ## Phase 4: Final Verification & Optimization [checkpoint: d8072df]
 Perform comprehensive testing and refine the mobile experience.
 
-- [~] **Task: Responsive Optimization**
-    - [ ] Ensure item images and thumbnails resize correctly on mobile devices.
-- [ ] **Task: Final Verification**
+- [x] **Task: Responsive Optimization** (e58957a)
+    - [x] Ensure item images and thumbnails resize correctly on mobile devices.
+- [~] **Task: Final Verification**
     - [ ] Run full test suite.
     - [ ] Perform end-to-end manual check of all features.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Mobile Optimization' (Protocol in workflow.md)**
