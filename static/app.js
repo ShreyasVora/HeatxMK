@@ -142,12 +142,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`/api/weights?distance=${distance}`);
             const data = await response.json();
             
-            weightList.innerHTML = data.weights.map(item => `
-                <div class="weight-item">
-                    <span class="item-name">${item.name}</span>
-                    <span class="item-val">${item.chance}%</span>
-                </div>
-            `).join('');
+            weightList.innerHTML = data.weights.map(item => {
+                const itemMetadata = itemConfig ? itemConfig.items.find(i => i.name === item.name) : null;
+                const imgSrc = itemMetadata ? itemMetadata.image_path : "";
+                
+                return `
+                    <div class="weight-item">
+                        <div class="item-info">
+                            ${imgSrc ? `<img src="${imgSrc}" alt="${item.name}" class="thumbnail-img">` : ""}
+                            <span class="item-name">${item.name}</span>
+                        </div>
+                        <span class="item-val">${item.chance}%</span>
+                    </div>
+                `;
+            }).join('');
         } catch (error) {
             console.error("Failed to fetch weights:", error);
         }

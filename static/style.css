@@ -279,6 +279,18 @@ main {
     align-items: center;
 }
 
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.thumbnail-img {
+    height: 24px;
+    width: auto;
+    object-fit: contain;
+}
+
 .weight-item .item-name {
     font-weight: 600;
     font-size: 0.875rem;
