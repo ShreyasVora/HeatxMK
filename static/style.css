@@ -209,6 +209,28 @@ main {
     color: #007bff;
 }
 
+.info-panel {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: #f8f9fa;
+    border-radius: 0.75rem;
+    border-left: 4px solid #007bff;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #495057;
+    animation: slideDown 0.3s ease-out;
+}
+
+.info-panel b {
+    color: var(--primary-color);
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .weight-readout {
     margin-top: 3rem;
     padding-top: 2rem;
