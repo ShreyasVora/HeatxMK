@@ -20,9 +20,9 @@ Transform the main spinner page to use images.
     - [x] Update the `app.js` spinner animation to cycle through images.
     - [x] Update the final result display to show the item image.
     - [x] Style the spinner image for consistent sizing.
-- [~] **Task: Implement Weight Readout Thumbnails**
-    - [ ] Update the "Available Items" list to include a small image for each item.
-    - [ ] Style the list items to accommodate the thumbnails.
+- [x] **Task: Implement Weight Readout Thumbnails** (9ebfbc6)
+    - [x] Update the "Available Items" list to include a small image for each item.
+    - [x] Style the list items to accommodate the thumbnails.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 2: Core UI Updates' (Protocol in workflow.md)**
 
 ## Phase 3: Distribution Visualization & Placeholder Fallback
