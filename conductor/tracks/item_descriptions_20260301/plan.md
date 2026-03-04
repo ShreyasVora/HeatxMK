@@ -2,19 +2,19 @@
 
 This plan covers the addition of descriptive metadata for items and its display across the Spinner and Distributions views.
 
-## Phase 1: Data & API Setup
+## Phase 1: Data & API Setup [checkpoint: df8a1fc]
 Update the item configuration and verify that the description metadata is correctly exposed via the API.
 
-- [ ] **Task: Update Item Configuration**
-    - [ ] Add a `"description"` field to all items in `items_config.json` with HTML content.
-- [ ] **Task: Verify API Response**
-    - [ ] Write a test in `test_main.py` to ensure the `description` field is present in the `/api/item` and `/api/config` responses.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 1: Data & API Setup' (Protocol in workflow.md)**
+- [x] **Task: Update Item Configuration** (b79f296)
+    - [x] Add a `"description"` field to all items in `items_config.json` with HTML content.
+- [x] **Task: Verify API Response** (b79f296)
+    - [x] Write a test in `test_main.py` to ensure the `description` field is present in the `/api/item` and `/api/config` responses.
+- [x] **Task: Conductor - User Manual Verification 'Phase 1: Data & API Setup' (Protocol in workflow.md)** (df8a1fc)
 
 ## Phase 2: Spinner Page Implementation
 Add the info panel to the main spinner page and display the description after a successful spin.
 
-- [ ] **Task: Create Info Panel UI**
+- [~] **Task: Create Info Panel UI**
     - [ ] Add a container `<div id="item-info-panel">` to `index.html` within the spinner section.
     - [ ] Style the panel in `style.css` (initially hidden, clean typography, neutral background).
 - [ ] **Task: Implement Selection Reveal Logic**
