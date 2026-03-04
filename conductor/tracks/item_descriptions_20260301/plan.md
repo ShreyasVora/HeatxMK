@@ -11,7 +11,7 @@ Update the item configuration and verify that the description metadata is correc
     - [x] Write a test in `test_main.py` to ensure the `description` field is present in the `/api/item` and `/api/config` responses.
 - [x] **Task: Conductor - User Manual Verification 'Phase 1: Data & API Setup' (Protocol in workflow.md)** (df8a1fc)
 
-## Phase 2: Spinner Page Implementation
+## Phase 2: Spinner Page Implementation [checkpoint: c93e59f]
 Add the info panel to the main spinner page and display the description after a successful spin.
 
 - [x] **Task: Create Info Panel UI** (d22a153)
@@ -20,12 +20,12 @@ Add the info panel to the main spinner page and display the description after a 
 - [x] **Task: Implement Selection Reveal Logic** (39f0d9e)
     - [x] Update `app.js` in the `finalizeSpin` function to populate the info panel with the item's description.
     - [x] Add a transition effect to show the panel once the spin is complete.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 2: Spinner Page Implementation' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 2: Spinner Page Implementation' (Protocol in workflow.md)** (c93e59f)
 
 ## Phase 3: Distributions Page Implementation
 Add the description readout below the weight distribution graph.
 
-- [ ] **Task: Create Description Container**
+- [~] **Task: Create Description Container**
     - [ ] Add a container `<div id="chart-description">` below the canvas in the distributions section of `index.html`.
     - [ ] Style the container for readability.
 - [ ] **Task: Implement Selective Readout Logic**
