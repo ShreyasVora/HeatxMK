@@ -14,10 +14,10 @@ Update the item configuration and verify that the description metadata is correc
 ## Phase 2: Spinner Page Implementation
 Add the info panel to the main spinner page and display the description after a successful spin.
 
-- [~] **Task: Create Info Panel UI**
-    - [ ] Add a container `<div id="item-info-panel">` to `index.html` within the spinner section.
-    - [ ] Style the panel in `style.css` (initially hidden, clean typography, neutral background).
-- [ ] **Task: Implement Selection Reveal Logic**
+- [x] **Task: Create Info Panel UI** (d22a153)
+    - [x] Add a container `<div id="item-info-panel">` to `index.html` within the spinner section.
+    - [x] Style the panel in `style.css` (initially hidden, clean typography, neutral background).
+- [~] **Task: Implement Selection Reveal Logic**
     - [ ] Update `app.js` in the `finalizeSpin` function to populate the info panel with the item's description.
     - [ ] Add a transition effect to show the panel once the spin is complete.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 2: Spinner Page Implementation' (Protocol in workflow.md)**
