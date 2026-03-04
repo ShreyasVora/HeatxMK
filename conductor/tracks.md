@@ -14,7 +14,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Add descriptive item tooltips and analytics readout**
+- [x] **Track: Add descriptive item tooltips and analytics readout**
   *Link: [./tracks/item_descriptions_20260301/](./tracks/item_descriptions_20260301/)*
 
 
