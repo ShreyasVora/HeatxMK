@@ -129,6 +129,15 @@ main {
     margin-bottom: 0.5rem;
     transition: all 0.2s;
     border: 1px solid transparent;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.selector-icon {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
 }
 
 #item-list li:hover {
@@ -140,6 +149,19 @@ main {
     color: var(--primary-color);
     border-color: var(--primary-color);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.desc-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.desc-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 .chart-container {

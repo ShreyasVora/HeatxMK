@@ -49,10 +49,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function getImagePath(item) {
+        if (item && item.image_path) {
+            return item.image_path;
+        }
+        return "images/items/placeholder.png"; // Fallback path
+    }
+
     function populateItemSelector() {
         const itemList = document.getElementById('item-list');
         itemList.innerHTML = itemConfig.items.map(item => `
-            <li data-name="${item.name}">${item.name}</li>
+            <li data-name="${item.name}">
+                <img src="${getImagePath(item)}" alt="" class="selector-icon">
+                <span>${item.name}</span>
+            </li>
         `).join('');
 
         itemList.querySelectorAll('li').forEach(li => {
@@ -78,9 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = document.getElementById('distribution-chart').getContext('2d');
         const chartDesc = document.getElementById('chart-description');
 
-        // Update description
+        // Update description with image
         const desc = item.description || "No description available for this item.";
-        chartDesc.innerHTML = `<strong>${item.name}:</strong> ${desc}`;
+        const imgSrc = getImagePath(item);
+        chartDesc.innerHTML = `
+            <div class="desc-header">
+                <img src="${imgSrc}" alt="${item.name}" class="desc-img">
+                <strong>${item.name}</strong>
+            </div>
+            <p>${desc}</p>
+        `;
         chartDesc.style.display = 'block';
         
         // Transform curve [distance, weight] to Chart.js data
@@ -146,12 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             weightList.innerHTML = data.weights.map(item => {
                 const itemMetadata = itemConfig ? itemConfig.items.find(i => i.name === item.name) : null;
-                const imgSrc = itemMetadata ? itemMetadata.image_path : "";
+                const imgSrc = getImagePath(itemMetadata);
                 
                 return `
                     <div class="weight-item">
                         <div class="item-info">
-                            ${imgSrc ? `<img src="${imgSrc}" alt="${item.name}" class="thumbnail-img">` : ""}
+                            <img src="${imgSrc}" alt="${item.name}" class="thumbnail-img">
                             <span class="item-name">${item.name}</span>
                         </div>
                         <span class="item-val">${item.chance}%</span>
@@ -227,18 +244,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = await response.json();
             
             // Set final item
-            if (data.metadata && data.metadata.image_path) {
-                itemDisplay.innerHTML = `<img src="${data.metadata.image_path}" alt="${data.name}" class="result-img">`;
-            } else {
-                itemDisplay.textContent = data.name;
-            }
+            const imgSrc = getImagePath(data.metadata);
+            itemDisplay.innerHTML = `<img src="${imgSrc}" alt="${data.name}" class="result-img">`;
+            
             itemDisplay.classList.remove('spinning');
             itemDisplay.classList.add('selected');
 
             // Show description
             if (data.metadata) {
                 const desc = data.metadata.description || "No description available for this item.";
-                infoPanel.innerHTML = `<strong>${data.name}:</strong> ${desc}`;
+                infoPanel.innerHTML = `
+                    <div class="desc-header">
+                        <img src="${imgSrc}" alt="${data.name}" class="desc-img">
+                        <strong>${data.name}</strong>
+                    </div>
+                    <p>${desc}</p>
+                `;
                 infoPanel.style.display = 'block';
             }
             
