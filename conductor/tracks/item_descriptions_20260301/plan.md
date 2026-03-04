@@ -32,12 +32,12 @@ Add the description readout below the weight distribution graph.
     - [x] Update the `renderCurve` function in `app.js` to populate the description container whenever a new item is selected.
 - [x] **Task: Conductor - User Manual Verification 'Phase 3: Distributions Page Implementation' (Protocol in workflow.md)** (eeab653)
 
-## Phase 4: Final Polishing & Verification
+## Phase 4: Final Polishing & Verification [checkpoint: 0ecc419]
 Ensure a cohesive user experience and mobile compatibility.
 
 - [x] **Task: UI Refinement** (2754e7b)
     - [x] Ensure consistent spacing and responsive behavior for the new text blocks.
     - [x] Handle the case where an item might have a missing description.
-- [~] **Task: Final Verification**
-    - [ ] Perform a full walkthrough of both views to ensure descriptions display as expected.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Verification' (Protocol in workflow.md)**
+- [x] **Task: Final Verification** (025cb66)
+    - [x] Perform a full walkthrough of both views to ensure descriptions display as expected.
+- [x] **Task: Conductor - User Manual Verification 'Phase 4: Final Polishing & Verification' (Protocol in workflow.md)** (0ecc419)
