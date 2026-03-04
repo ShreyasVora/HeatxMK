@@ -71,12 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const chartDesc = document.getElementById('chart-description');
 
         // Update description
-        if (item.description) {
-            chartDesc.innerHTML = `<strong>${item.name}:</strong> ${item.description}`;
-            chartDesc.style.display = 'block';
-        } else {
-            chartDesc.style.display = 'none';
-        }
+        const desc = item.description || "No description available for this item.";
+        chartDesc.innerHTML = `<strong>${item.name}:</strong> ${desc}`;
+        chartDesc.style.display = 'block';
         
         // Transform curve [distance, weight] to Chart.js data
         const data = item.weight_curve.map(p => ({ x: p[0], y: p[1] }));
@@ -213,8 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
             itemDisplay.classList.add('selected');
 
             // Show description
-            if (data.metadata && data.metadata.description) {
-                infoPanel.innerHTML = `<strong>${data.name}:</strong> ${data.metadata.description}`;
+            if (data.metadata) {
+                const desc = data.metadata.description || "No description available for this item.";
+                infoPanel.innerHTML = `<strong>${data.name}:</strong> ${desc}`;
                 infoPanel.style.display = 'block';
             }
             
