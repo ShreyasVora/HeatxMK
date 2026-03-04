@@ -2,7 +2,7 @@
 
 This plan covers the replacement of item names with images throughout the HeatxMK interface.
 
-## Phase 1: Configuration & Assets Setup
+## Phase 1: Configuration & Assets Setup [checkpoint: 92de3cc]
 Prepare the backend and configuration to support item images.
 
 - [x] **Task: Update Item Configuration** (6053c72)
@@ -11,12 +11,12 @@ Prepare the backend and configuration to support item images.
 - [x] **Task: Update ItemEngine for Image Metadata** (0122ae1)
     - [x] Ensure the `/api/item` and `/api/weights` endpoints return the `image_path`.
     - [x] Write unit tests to verify that `image_path` is correctly returned by the engine.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 1: Configuration & Assets Setup' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 1: Configuration & Assets Setup' (Protocol in workflow.md)** (92de3cc)
 
 ## Phase 2: Core UI Updates (Spinner & Readout)
 Transform the main spinner page to use images.
 
-- [ ] **Task: Implement Spinner Image Logic**
+- [~] **Task: Implement Spinner Image Logic**
     - [ ] Update the `app.js` spinner animation to cycle through images.
     - [ ] Update the final result display to show the item image.
     - [ ] Style the spinner image for consistent sizing.
