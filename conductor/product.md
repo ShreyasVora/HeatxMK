@@ -12,8 +12,9 @@ HeatxMK is a web-based companion app for a real-life modification of the board g
 ## Key Features
 - **Dynamic Input:** A web UI where users specify the distance between them and the race leader.
 - **Randomized Spinner:** An interactive UI element that "spins" through items before landing on the selected one.
-- **Multi-tabbed SPA Interface:** A Single Page App layout allowing users to switch between the item spinner and distribution analytics.
-- **Real-time Weight Analytics:** Live readout of item probabilities on the spinner page and interactive weight-curve graphs on the distributions page.
+- **Multi-tabbed SPA Interface:** A Single Page App layout allowing users to switch between the Item Spinner, Rules, and Item Details views.
+- **Integrated Rulebook:** A dedicated Rules page providing a vertical list of all game items with their mechanical effects clearly explained.
+- **Real-time Weight Analytics:** Live readout of item probabilities on the spinner page and interactive weight-curve graphs on the Item Details page.
 - **Item Mechanical Descriptions:** Detailed explanations of each item's effect within the physical board game, displayed automatically after a spin and on the analytics page.
 - **Python Logic Engine:** A backend that handles the probability distribution of items (e.g., players further back get more powerful "catch-up" items).
 - **Physical Token Integration:** The app displays visual representations (images) of items, making it easy for the user to identify which physical token to pull from their bag.
