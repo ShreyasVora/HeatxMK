@@ -47,17 +47,19 @@
             <section id="view-distributions" style="display: none;">
                 <div class="analytics-layout">
                     <aside class="item-selector">
-                        <h3>Select Item</h3>
-                        <ul id="item-list">
+                        <h3>Items</h3>
+                        <ul id="item-list" class="item-grid">
                             <!-- Items will be populated here -->
                         </ul>
                     </aside>
-                    <div class="chart-container">
-                        <canvas id="distribution-chart"></canvas>
+                    <div class="analytics-main">
+                        <div id="chart-description" class="info-panel" style="margin-top: 0; margin-bottom: 2rem; display: none;">
+                            <!-- Description will be inserted here -->
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="distribution-chart"></canvas>
+                        </div>
                     </div>
-                </div>
-                <div id="chart-description" class="info-panel" style="margin-top: 2rem; max-width: 800px; margin-left: auto; margin-right: auto; display: none;">
-                    <!-- Description will be inserted here -->
                 </div>
             </section>
         </main>

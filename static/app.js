@@ -59,9 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function populateItemSelector() {
         const itemList = document.getElementById('item-list');
         itemList.innerHTML = itemConfig.items.map(item => `
-            <li data-name="${item.name}">
-                <img src="${getImagePath(item)}" alt="" class="selector-icon">
-                <span>${item.name}</span>
+            <li data-name="${item.name}" title="${item.name}">
+                <img src="${getImagePath(item)}" alt="${item.name}" class="selector-large-icon">
             </li>
         `).join('');
 
@@ -166,11 +165,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const imgSrc = getImagePath(itemMetadata);
                 
                 return `
-                    <div class="weight-item">
-                        <div class="item-info">
-                            <img src="${imgSrc}" alt="${item.name}" class="thumbnail-img">
-                            <span class="item-name">${item.name}</span>
-                        </div>
+                    <div class="weight-item visual-only" title="${item.name}: ${item.chance}%">
+                        <img src="${imgSrc}" alt="${item.name}" class="large-thumbnail-img">
                         <span class="item-val">${item.chance}%</span>
                     </div>
                 `;
