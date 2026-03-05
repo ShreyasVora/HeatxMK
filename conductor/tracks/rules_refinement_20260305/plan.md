@@ -26,11 +26,11 @@ Apply the finalized rules to the data layer and update tests.
 ## Phase 3: Frontend Synchronization
 Update the SPA views to display the expanded rulebook and coin data.
 
-- [~] **Task: Enhance 'Rules' Page**
-    - [ ] Update `populateRulesList` in `app.js` to render Timing and Coin info.
-    - [ ] Add CSS for highlighting timing steps (e.g., color-coded by turn step).
-- [ ] **Task: Update 'Item Spinner' Result Panel**
-    - [ ] Update `finalizeSpin` in `app.js` to display the timing and coin metadata prominently after a result.
+- [x] **Task: Enhance 'Rules' Page** (d43075e)
+    - [x] Update `populateRulesList` in `app.js` to render Timing and Coin info.
+    - [x] Add CSS for highlighting timing steps (e.g., color-coded by turn step).
+- [x] **Task: Update 'Item Spinner' Result Panel** (d43075e)
+    - [x] Update `finalizeSpin` in `app.js` to display the timing and coin metadata prominently after a result.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 3: Frontend Synchronization' (Protocol in workflow.md)**
 
 ## Phase 4: Final Verification
