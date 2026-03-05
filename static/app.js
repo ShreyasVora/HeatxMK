@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const views = {
         spinner: document.getElementById('view-spinner'),
+        rules: document.getElementById('view-rules'),
         'item-details': document.getElementById('view-item-details')
     };
 
@@ -19,9 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // If switching to item-details, we might need to initialize the chart
+        // Initialize views if needed
         if (viewId === 'item-details') {
             initializeItemDetailsView();
+        } else if (viewId === 'rules') {
+            initializeRulesView();
         }
 
         // Update URL hash without triggering reload
@@ -52,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.switchView = switchView;
     window.handleRouting = handleRouting;
 
-    // Distribution View Logic
+    // View Initialization Logic
     let itemConfig = null;
     let chartInstance = null;
 
@@ -72,6 +75,26 @@ document.addEventListener('DOMContentLoaded', () => {
         if (itemConfig) {
             populateItemSelector();
         }
+    }
+
+    async function initializeRulesView() {
+        await loadItemConfig();
+        if (itemConfig) {
+            populateRulesList();
+        }
+    }
+
+    function populateRulesList() {
+        const rulesList = document.getElementById('rules-list');
+        rulesList.innerHTML = itemConfig.items.map(item => `
+            <div class="rule-item" data-name="${item.name}">
+                <img src="${getImagePath(item)}" alt="${item.name}" class="rule-icon">
+                <div class="rule-content">
+                    <h3>${item.name}</h3>
+                    <p>${item.description || "No description available."}</p>
+                </div>
+            </div>
+        `).join('');
     }
 
     function getImagePath(item) {

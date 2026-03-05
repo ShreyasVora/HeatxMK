@@ -16,6 +16,7 @@
 
         <nav class="tabs">
             <button class="tab-btn active" data-view="spinner">Item Spinner</button>
+            <button class="tab-btn" data-view="rules">Rules</button>
             <button class="tab-btn" data-view="item-details">Item Details</button>
         </nav>
 
@@ -40,6 +41,16 @@
                     <h3>Available Items</h3>
                     <div id="weight-list" class="weight-list">
                         <!-- Weight items will be dynamically inserted here -->
+                    </div>
+                </div>
+            </section>
+
+            <section id="view-rules" style="display: none;">
+                <div class="rules-container">
+                    <h2>Item Rules</h2>
+                    <p class="subtitle">Understand how each item affects the race</p>
+                    <div id="rules-list" class="rules-list">
+                        <!-- Items will be populated here -->
                     </div>
                 </div>
             </section>
