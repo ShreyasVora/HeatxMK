@@ -94,8 +94,15 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="rule-item" data-name="${item.name}">
                 <img src="${getImagePath(item)}" alt="${item.name}" class="rule-icon">
                 <div class="rule-content">
-                    <h3>${item.name}</h3>
+                    <div class="rule-header">
+                        <h3>${item.name}</h3>
+                        <span class="timing-badge">${item.usage_timing || "N/A"}</span>
+                    </div>
                     <p>${item.description || "No description available."}</p>
+                    <div class="coin-meta">
+                        ${item.coin_reward !== "0" ? `<span class="reward">Reward: ${item.coin_reward}</span>` : ""}
+                        ${item.coin_cost !== "0" ? `<span class="cost">Cost: ${item.coin_cost}</span>` : ""}
+                    </div>
                 </div>
             </div>
         `).join('');
@@ -152,9 +159,16 @@ document.addEventListener('DOMContentLoaded', () => {
         chartDesc.innerHTML = `
             <div class="desc-header">
                 <img src="${imgSrc}" alt="${item.name}" class="desc-img">
-                <strong>${item.name}</strong>
+                <div class="header-text">
+                    <strong>${item.name}</strong>
+                    <span class="timing-badge">${item.usage_timing || "N/A"}</span>
+                </div>
             </div>
             <p>${desc}</p>
+            <div class="coin-meta">
+                ${item.coin_reward !== "0" ? `<span class="reward">Reward: ${item.coin_reward}</span>` : ""}
+                ${item.coin_cost !== "0" ? `<span class="cost">Cost: ${item.coin_cost}</span>` : ""}
+            </div>
         `;
         chartDesc.style.display = 'block';
         
@@ -311,9 +325,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 infoPanel.innerHTML = `
                     <div class="desc-header">
                         <img src="${imgSrc}" alt="${data.name}" class="desc-img">
-                        <strong>${data.name}</strong>
+                        <div class="header-text">
+                            <strong>${data.name}</strong>
+                            <span class="timing-badge">${data.metadata.usage_timing || "N/A"}</span>
+                        </div>
                     </div>
                     <p>${desc}</p>
+                    <div class="coin-meta">
+                        ${data.metadata.coin_reward !== "0" ? `<span class="reward">Reward: ${data.metadata.coin_reward}</span>` : ""}
+                        ${data.metadata.coin_cost !== "0" ? `<span class="cost">Cost: ${data.metadata.coin_cost}</span>` : ""}
+                    </div>
                 `;
                 infoPanel.style.display = 'block';
             }

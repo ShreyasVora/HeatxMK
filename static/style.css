@@ -232,6 +232,46 @@ main {
     margin-bottom: 0.75rem;
 }
 
+.header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.timing-badge {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #e9ecef;
+    color: #495057;
+    border-radius: 0.25rem;
+}
+
+.rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.coin-meta {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.coin-meta .reward {
+    color: #28a745;
+}
+
+.coin-meta .cost {
+    color: #dc3545;
+}
+
 .desc-img {
     height: 40px;
     width: auto;
