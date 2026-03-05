@@ -9,7 +9,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Rules Refinement & Coin Economy**
+- [x] **Track: Rules Refinement & Coin Economy**
   *Link: [./tracks/rules_refinement_20260305/](./tracks/rules_refinement_20260305/)*
 
 
