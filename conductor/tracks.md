@@ -9,5 +9,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Rules Page and Item Details Revamp**
+- [x] **Track: Rules Page and Item Details Revamp**
 *Link: [./tracks/rules_revamp_20260305/](./tracks/rules_revamp_20260305/)*
