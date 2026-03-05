@@ -23,7 +23,7 @@ Apply the finalized rules to the data layer and update tests.
     - [x] Write tests in `test_item_engine.py` to verify that the new metadata fields are present and correctly formatted.
 - [x] **Task: Conductor - User Manual Verification 'Phase 2: Configuration & Backend' (Protocol in workflow.md)** (779a90f)
 
-## Phase 3: Frontend Synchronization
+## Phase 3: Frontend Synchronization [checkpoint: 363a464]
 Update the SPA views to display the expanded rulebook and coin data.
 
 - [x] **Task: Enhance 'Rules' Page** (d43075e)
@@ -31,13 +31,13 @@ Update the SPA views to display the expanded rulebook and coin data.
     - [x] Add CSS for highlighting timing steps (e.g., color-coded by turn step).
 - [x] **Task: Update 'Item Spinner' Result Panel** (d43075e)
     - [x] Update `finalizeSpin` in `app.js` to display the timing and coin metadata prominently after a result.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 3: Frontend Synchronization' (Protocol in workflow.md)**
+- [x] **Task: Conductor - User Manual Verification 'Phase 3: Frontend Synchronization' (Protocol in workflow.md)** (363a464)
 
 ## Phase 4: Final Verification
 Ensure the rulebook feels professional and consistent.
 
-- [ ] **Task: Rules Audit**
-    - [ ] Verify that all 14 items maintain a consistent tone and follow standard *Heat* turn terminology.
-- [ ] **Task: Full Application Walkthrough**
+- [x] **Task: Rules Audit** (ed6292a)
+    - [x] Verify that all 14 items maintain a consistent tone and follow standard *Heat* turn terminology.
+- [~] **Task: Full Application Walkthrough**
     - [ ] Manual test of all 3 views (Home, Rules, Item Details) ensuring all metadata displays correctly.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Verification' (Protocol in workflow.md)**
