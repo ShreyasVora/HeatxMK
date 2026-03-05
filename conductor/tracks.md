@@ -7,3 +7,9 @@ This file tracks all major tracks for the project. Each track has its own detail
 - [x] **Track: Implement core application logic and basic web UI**
   *Link: [./tracks/core_logic_ui_20260228/](./tracks/core_logic_ui_20260228/)*
 
+---
+
+- [ ] **Track: Rules Refinement & Coin Economy**
+  *Link: [./tracks/rules_refinement_20260305/](./tracks/rules_refinement_20260305/)*
+
+
