@@ -1,4 +1,4 @@
-# Track item_images_20260301 Context
+# Track rules_revamp_20260305 Context
 
 - [Specification](./spec.md)
 - [Implementation Plan](./plan.md)

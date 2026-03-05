@@ -3,7 +3,7 @@
     {
       "name": "Banana",
       "description": "Place a banana on your current space. Any car entering this space must pay <b>1 Heat</b> or take a <b>Spin Out</b>.",
-      "image_path": "static/images/items/Banana.png",
+      "image_path": "images/items/Banana.png",
       "weight_curve": [
         [0, 60],
         [20, 30],
@@ -13,7 +13,7 @@
     {
       "name": "Red Shell",
       "description": "Target the car immediately in front of you. They must move down <b>1 Gear</b> and take <b>1 Stress</b> card.",
-      "image_path": "static/images/items/RedShell.png",
+      "image_path": "images/items/RedShell.png",
       "weight_curve": [
         [0, 40],
         [30, 40],
@@ -24,7 +24,7 @@
     {
       "name": "Mushroom",
       "description": "Perform an extra <b>Boost</b> this turn without paying Heat. You may also ignore 1 symbol on a corner.",
-      "image_path": "static/images/items/Mushroom.png",
+      "image_path": "images/items/Mushroom.png",
       "weight_curve": [
         [0, 20],
         [30, 50],
@@ -34,7 +34,7 @@
     {
       "name": "Star",
       "description": "Become Invincible! Move <b>+2 spaces</b>, ignore all track limits, and you cannot be affected by other items this turn.",
-      "image_path": "static/images/items/Star.png",
+      "image_path": "images/items/Star.png",
       "weight_curve": [
         [0, 0],
         [40, 0],
@@ -45,7 +45,7 @@
     {
       "name": "Blue Shell",
       "description": "The current race leader must immediately move to <b>1st Gear</b> and discard <b>2 cards</b> from their hand.",
-      "image_path": "static/images/items/BlueShell.png",
+      "image_path": "images/items/BlueShell.png",
       "weight_curve": [
         [0, 0],
         [30, 0],
@@ -56,7 +56,7 @@
     {
       "name": "Rocket",
       "description": "Blast forward! Move <b>+5 spaces</b> instantly. Any cars you pass must take <b>1 Stress</b> card.",
-      "image_path": "static/images/items/Rocket.png",
+      "image_path": "images/items/Rocket.png",
       "weight_curve": [
         [0, 0],
         [60, 0],
@@ -67,7 +67,7 @@
     {
       "name": "Yellow Coin",
       "description": "Collect 1 coin. You may discard this at any time to move <b>+1 space</b>.",
-      "image_path": "static/images/items/YellowCoin.png",
+      "image_path": "images/items/YellowCoin.png",
       "weight_curve": [
         [0, 40],
         [100, 40]
@@ -76,7 +76,7 @@
     {
       "name": "Red Coin",
       "description": "Collect a red coin. If you have 3, you may discard them to <b>Remove 2 Heat</b> from your engine.",
-      "image_path": "static/images/items/RedCoin.png",
+      "image_path": "images/items/RedCoin.png",
       "weight_curve": [
         [0, 10],
         [50, 20],
@@ -86,7 +86,7 @@
     {
       "name": "Green Shell",
       "description": "Fire forward! The next car in front of you (any distance) must take <b>1 Stress</b> card.",
-      "image_path": "static/images/items/GreenShell.png",
+      "image_path": "images/items/GreenShell.png",
       "weight_curve": [
         [0, 30],
         [40, 30],
@@ -96,7 +96,7 @@
     {
       "name": "Fire Flower",
       "description": "You may fire up to 3 fireballs. Each target must pay <b>1 Heat</b> or move down <b>1 Gear</b>.",
-      "image_path": "static/images/items/FireFlower.png",
+      "image_path": "images/items/FireFlower.png",
       "weight_curve": [
         [20, 0],
         [40, 20],
@@ -106,7 +106,7 @@
     {
       "name": "Ice Flower",
       "description": "Freeze the track! All cars you pass this turn must move down <b>1 Gear</b>.",
-      "image_path": "static/images/items/IceFlower.png",
+      "image_path": "images/items/IceFlower.png",
       "weight_curve": [
         [20, 0],
         [40, 20],
@@ -116,7 +116,7 @@
     {
       "name": "Lightning",
       "description": "Shock everyone! All other players must move down <b>1 Gear</b> and discard <b>1 card</b>.",
-      "image_path": "static/images/items/Lightning.png",
+      "image_path": "images/items/Lightning.png",
       "weight_curve": [
         [0, 0],
         [60, 0],
@@ -127,7 +127,7 @@
     {
       "name": "Blooper",
       "description": "Ink the leader! The race leader must play with their hand <b>face-up</b> until the end of their next turn.",
-      "image_path": "static/images/items/Blooper.png",
+      "image_path": "images/items/Blooper.png",
       "weight_curve": [
         [0, 0],
         [40, 0],
@@ -138,7 +138,7 @@
     {
       "name": "Golden Mushroom",
       "description": "Triple Boost! Perform 3 extra <b>Boosts</b> this turn without paying Heat.",
-      "image_path": "static/images/items/GoldenMushroom.png",
+      "image_path": "images/items/GoldenMushroom.png",
       "weight_curve": [
         [0, 0],
         [60, 0],
