@@ -1,1 +1,8 @@
-venv
+venv/
+.idea/
+__pycache__/
+.pytest_cache/
+deploy/*.env
+deploy/*.log
+deploy/pids*
+deploy/last_stopped.txt
