@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'item-details': document.getElementById('view-item-details')
     };
 
-    function switchView(viewId) {
+    function switchView(viewId, metadata = {}) {
         // Update Buttons
         tabButtons.forEach(btn => {
             btn.classList.toggle('active', btn.dataset.view === viewId);
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Initialize views if needed
         if (viewId === 'item-details') {
-            initializeItemDetailsView();
+            initializeItemDetailsView(metadata.targetItem);
         } else if (viewId === 'rules') {
             initializeRulesView();
         }
@@ -70,10 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function initializeItemDetailsView() {
+    async function initializeItemDetailsView(targetItem = null) {
         await loadItemConfig();
         if (itemConfig) {
             populateItemSelector();
+            if (targetItem) {
+                const selector = document.querySelector(`#item-list li[data-name="${targetItem}"]`);
+                if (selector) selector.click();
+            }
         }
     }
 
@@ -95,6 +99,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `).join('');
+
+        // Navigation to details
+        rulesList.querySelectorAll('.rule-item').forEach(item => {
+            item.addEventListener('click', () => {
+                switchView('item-details', { targetItem: item.dataset.name });
+            });
+        });
     }
 
     function getImagePath(item) {
