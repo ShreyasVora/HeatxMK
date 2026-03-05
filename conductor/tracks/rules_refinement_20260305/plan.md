@@ -16,10 +16,10 @@ This phase is an interactive process between the AI and the User to finalize the
 ## Phase 2: Configuration & Backend Updates
 Apply the finalized rules to the data layer and update tests.
 
-- [~] **Task: Update `items_config.json`**
-    - [ ] Add new fields: `usage_timing`, `coin_reward`, `coin_cost`, and `balancing_notes`.
-    - [ ] Overwrite old descriptions with finalized versions.
-- [ ] **Task: Update ItemEngine Tests**
+- [x] **Task: Update `items_config.json`** (ed6292a)
+    - [x] Add new fields: `usage_timing`, `coin_reward`, `coin_cost`, and `balancing_notes`.
+    - [x] Overwrite old descriptions with finalized versions.
+- [~] **Task: Update ItemEngine Tests**
     - [ ] Write tests in `test_item_engine.py` to verify that the new metadata fields are present and correctly formatted.
 - [ ] **Task: Conductor - User Manual Verification 'Phase 2: Configuration & Backend' (Protocol in workflow.md)**
 
