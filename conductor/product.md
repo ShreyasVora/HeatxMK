@@ -16,7 +16,7 @@ HeatxMK is a web-based companion app for a real-life modification of the board g
 - **Real-time Weight Analytics:** Live readout of item probabilities on the spinner page and interactive weight-curve graphs on the distributions page.
 - **Item Mechanical Descriptions:** Detailed explanations of each item's effect within the physical board game, displayed automatically after a spin and on the analytics page.
 - **Python Logic Engine:** A backend that handles the probability distribution of items (e.g., players further back get more powerful "catch-up" items).
-- **Physical Token Integration:** The app tells the user which physical token to pull from their bag.
+- **Physical Token Integration:** The app displays visual representations (images) of items, making it easy for the user to identify which physical token to pull from their bag.
 
 ## Deployment & Integration
 - **Standalone Web App:** A Python backend (FastAPI/Flask) serving a simple HTML/JS frontend, accessible via a local network or hosted simply.
