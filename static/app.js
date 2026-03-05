@@ -1,12 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Navigation
+    // State
+    let itemConfig = null;
+    let chartInstance = null;
+
+    // UI Elements
     const tabButtons = document.querySelectorAll('.tab-btn');
     const views = {
         spinner: document.getElementById('view-spinner'),
         rules: document.getElementById('view-rules'),
         'item-details': document.getElementById('view-item-details')
     };
+    const spinButton = document.getElementById('spin-button');
+    const itemDisplay = document.getElementById('item-display');
+    const distanceInput = document.getElementById('distance');
+    const weightList = document.getElementById('weight-list');
+    const infoPanel = document.getElementById('item-info-panel');
 
+    // Navigation Logic
     function switchView(viewId, metadata = {}) {
         // Update Buttons
         tabButtons.forEach(btn => {
@@ -42,23 +52,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    tabButtons.forEach(btn => {
-        btn.addEventListener('click', () => switchView(btn.dataset.view));
-    });
-
-    window.addEventListener('hashchange', handleRouting);
-
-    // Initial Route
-    handleRouting();
-
-    // Make globally accessible for testing
-    window.switchView = switchView;
-    window.handleRouting = handleRouting;
+    // Helper: Get Image Path
+    function getImagePath(item) {
+        if (item && item.image_path) {
+            return item.image_path;
+        }
+        return "images/items/placeholder.png"; 
+    }
 
     // View Initialization Logic
-    let itemConfig = null;
-    let chartInstance = null;
-
     async function loadItemConfig() {
         if (!itemConfig) {
             try {
@@ -115,13 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function getImagePath(item) {
-        if (item && item.image_path) {
-            return item.image_path;
-        }
-        return "images/items/placeholder.png"; // Fallback path
-    }
-
     function populateItemSelector() {
         const itemList = document.getElementById('item-list');
         itemList.innerHTML = itemConfig.items.map(item => `
@@ -146,14 +141,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderCurve(itemName) {
         const item = itemConfig.items.find(i => i.name === itemName);
-        if (!item) {
-            return;
-        }
+        if (!item) return;
 
         const ctx = document.getElementById('distribution-chart').getContext('2d');
         const chartDesc = document.getElementById('chart-description');
 
-        // Update description with image
         const desc = item.description || "No description available for this item.";
         const imgSrc = getImagePath(item);
         chartDesc.innerHTML = `
@@ -172,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         chartDesc.style.display = 'block';
         
-        // Transform curve [distance, weight] to Chart.js data
         const data = item.weight_curve.map(p => ({ x: p[0], y: p[1] }));
 
         if (chartInstance) {
@@ -188,43 +179,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     borderColor: '#007bff',
                     backgroundColor: 'rgba(0, 123, 255, 0.1)',
                     fill: true,
-                    tension: 0, // Linear interpolation
+                    tension: 0,
                     pointRadius: 5,
                     pointHoverRadius: 7
                 }]
             },
             options: {
-                responsive: true,
-                maintainAspectRatio: false,
+                responsive: true, maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        type: 'linear',
-                        title: { display: true, text: 'Distance to First Place' },
-                        min: 0,
-                        max: 120
-                    },
-                    y: {
-                        title: { display: true, text: 'Weight' },
-                        beginAtZero: true
-                    }
-                },
-                plugins: {
-                    legend: { display: true, position: 'top' }
+                    x: { type: 'linear', title: { display: true, text: 'Distance' }, min: 0, max: 120 },
+                    y: { title: { display: true, text: 'Weight' }, beginAtZero: true }
                 }
             }
         });
     }
 
-    // Make switchView globally accessible for testing
-    window.switchView = switchView;
-
     // Spinner Logic
-    const spinButton = document.getElementById('spin-button');
-    const itemDisplay = document.getElementById('item-display');
-    const distanceInput = document.getElementById('distance');
-    const weightList = document.getElementById('weight-list');
-    const infoPanel = document.getElementById('item-info-panel');
-
     async function updateWeights() {
         const distance = parseInt(distanceInput.value) || 0;
         if (distance < 0) return;
@@ -249,79 +219,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Debounce to prevent too many API calls
-    let timeout = null;
-    distanceInput.addEventListener('input', () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(updateWeights, 300);
-    });
-
-    // Initial update
-    loadItemConfig().then(() => {
-        updateWeights();
-    });
-
-    spinButton.addEventListener('click', async () => {
-        const distance = parseInt(distanceInput.value) || 0;
-        
-        if (distance < 0) {
-            alert("Distance must be non-negative");
-            return;
-        }
-
-        // Disable button during spin
-        spinButton.disabled = true;
-        itemDisplay.classList.add('spinning');
-        infoPanel.style.display = 'none';
-
-        try {
-            // Start fetch early
-            const responsePromise = fetch(`/api/item?distance=${distance}`);
-            
-            // Animation: Cycle through items
-            let cycleCount = 0;
-            const maxCycles = 15;
-            const itemsToCycle = itemConfig ? itemConfig.items : [];
-            
-            const interval = setInterval(() => {
-                if (itemsToCycle.length > 0) {
-                    const randomItem = itemsToCycle[Math.floor(Math.random() * itemsToCycle.length)];
-                    itemDisplay.innerHTML = `<img src="${randomItem.image_path}" alt="${randomItem.name}" class="spinner-img">`;
-                } else {
-                    itemDisplay.textContent = "...";
-                }
-                cycleCount++;
-
-                if (cycleCount >= maxCycles) {
-                    clearInterval(interval);
-                    finalizeSpin(responsePromise);
-                }
-            }, 100);
-
-        } catch (error) {
-            console.error("Spin failed:", error);
-            itemDisplay.textContent = "ERROR";
-            spinButton.disabled = false;
-        }
-    });
-
     async function finalizeSpin(responsePromise) {
         try {
             const response = await responsePromise;
-            if (!response.ok) throw new Error("API error");
-            
             const data = await response.json();
-            
-            // Set final item
             const imgSrc = getImagePath(data.metadata);
-            itemDisplay.innerHTML = `<img src="${imgSrc}" alt="${data.name}" class="result-img">`;
             
+            itemDisplay.innerHTML = `<img src="${imgSrc}" alt="${data.name}" class="result-img">`;
             itemDisplay.classList.remove('spinning');
             itemDisplay.classList.add('selected');
 
-            // Show description
             if (data.metadata) {
-                const desc = data.metadata.description || "No description available for this item.";
+                const desc = data.metadata.description || "No description available.";
                 infoPanel.innerHTML = `
                     <div class="desc-header">
                         <img src="${imgSrc}" alt="${data.name}" class="desc-img">
@@ -339,16 +248,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 infoPanel.style.display = 'block';
             }
             
-            // Brief timeout before re-enabling
             setTimeout(() => {
                 spinButton.disabled = false;
                 itemDisplay.classList.remove('selected');
             }, 1000);
-
         } catch (error) {
             console.error("Finalize spin failed:", error);
             itemDisplay.textContent = "API ERROR";
             spinButton.disabled = false;
         }
     }
+
+    // Event Listeners
+    tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => switchView(btn.dataset.view));
+    });
+
+    window.addEventListener('hashchange', handleRouting);
+
+    let timeout = null;
+    distanceInput.addEventListener('input', () => {
+        clearTimeout(timeout);
+        timeout = setTimeout(updateWeights, 300);
+    });
+
+    spinButton.addEventListener('click', async () => {
+        const distance = parseInt(distanceInput.value) || 0;
+        if (distance < 0) { alert("Distance must be non-negative"); return; }
+
+        spinButton.disabled = true;
+        itemDisplay.classList.add('spinning');
+        infoPanel.style.display = 'none';
+
+        try {
+            const responsePromise = fetch(`/api/item?distance=${distance}`);
+            let cycleCount = 0;
+            const interval = setInterval(() => {
+                if (itemConfig && itemConfig.items.length > 0) {
+                    const randomItem = itemConfig.items[Math.floor(Math.random() * itemConfig.items.length)];
+                    itemDisplay.innerHTML = `<img src="${randomItem.image_path}" alt="" class="spinner-img">`;
+                }
+                if (++cycleCount >= 15) { clearInterval(interval); finalizeSpin(responsePromise); }
+            }, 100);
+        } catch (error) {
+            spinButton.disabled = false;
+        }
+    });
+
+    // Global Hooks for Testing
+    window.switchView = switchView;
+    window.handleRouting = handleRouting;
+
+    // Bootstrap
+    loadItemConfig().then(() => {
+        handleRouting(); // This now happens AFTER itemConfig is available or being fetched
+        updateWeights();
+    });
 });
