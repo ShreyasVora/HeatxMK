@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');
     const views = {
         spinner: document.getElementById('view-spinner'),
-        distributions: document.getElementById('view-distributions')
+        'item-details': document.getElementById('view-item-details')
     };
 
     function switchView(viewId) {
@@ -14,18 +14,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Sections
         Object.keys(views).forEach(id => {
-            views[id].style.display = id === viewId ? 'block' : 'none';
+            if (views[id]) {
+                views[id].style.display = id === viewId ? 'block' : 'none';
+            }
         });
 
-        // If switching to distributions, we might need to initialize the chart
-        if (viewId === 'distributions') {
-            initializeDistributionsView();
+        // If switching to item-details, we might need to initialize the chart
+        if (viewId === 'item-details') {
+            initializeItemDetailsView();
+        }
+
+        // Update URL hash without triggering reload
+        if (location.hash !== `#${viewId}`) {
+            history.pushState(null, null, `#${viewId}`);
+        }
+    }
+
+    function handleRouting() {
+        const hash = location.hash.replace('#', '') || 'spinner';
+        if (views[hash]) {
+            switchView(hash);
+        } else {
+            switchView('spinner');
         }
     }
 
     tabButtons.forEach(btn => {
         btn.addEventListener('click', () => switchView(btn.dataset.view));
     });
+
+    window.addEventListener('hashchange', handleRouting);
+
+    // Initial Route
+    handleRouting();
+
+    // Make globally accessible for testing
+    window.switchView = switchView;
+    window.handleRouting = handleRouting;
 
     // Distribution View Logic
     let itemConfig = null;
@@ -42,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    async function initializeDistributionsView() {
+    async function initializeItemDetailsView() {
         await loadItemConfig();
         if (itemConfig) {
             populateItemSelector();
