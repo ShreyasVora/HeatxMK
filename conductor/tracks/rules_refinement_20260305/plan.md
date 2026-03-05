@@ -33,11 +33,11 @@ Update the SPA views to display the expanded rulebook and coin data.
     - [x] Update `finalizeSpin` in `app.js` to display the timing and coin metadata prominently after a result.
 - [x] **Task: Conductor - User Manual Verification 'Phase 3: Frontend Synchronization' (Protocol in workflow.md)** (363a464)
 
-## Phase 4: Final Verification
+## Phase 4: Final Verification [checkpoint: 81669a8]
 Ensure the rulebook feels professional and consistent.
 
 - [x] **Task: Rules Audit** (ed6292a)
     - [x] Verify that all 14 items maintain a consistent tone and follow standard *Heat* turn terminology.
-- [~] **Task: Full Application Walkthrough**
-    - [ ] Manual test of all 3 views (Home, Rules, Item Details) ensuring all metadata displays correctly.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 4: Final Verification' (Protocol in workflow.md)**
+- [x] **Task: Full Application Walkthrough** (81669a8)
+    - [x] Manual test of all 3 views (Home, Rules, Item Details) ensuring all metadata displays correctly.
+- [x] **Task: Conductor - User Manual Verification 'Phase 4: Final Verification' (Protocol in workflow.md)** (81669a8)
