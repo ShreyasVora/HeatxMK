@@ -52,6 +52,10 @@ def test_full_config_load():
         assert "image_path" in item
         assert "name" in item
         assert "weight_curve" in item
+        assert "usage_timing" in item
+        assert "coin_reward" in item
+        assert "coin_cost" in item
+        assert "balancing_notes" in item
 
 def test_impossible_items(config_file):
     engine = ItemEngine(config_file)
