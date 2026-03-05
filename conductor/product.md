@@ -13,7 +13,8 @@ HeatxMK is a web-based companion app for a real-life modification of the board g
 - **Dynamic Input:** A web UI where users specify the distance between them and the race leader.
 - **Randomized Spinner:** An interactive UI element that "spins" through items before landing on the selected one.
 - **Multi-tabbed SPA Interface:** A Single Page App layout allowing users to switch between the Item Spinner, Rules, and Item Details views.
-- **Integrated Rulebook:** A dedicated Rules page providing a vertical list of all game items with their mechanical effects clearly explained.
+- **Integrated Rulebook:** A comprehensive digital guide featuring finalized mechanics, specific turn-timing triggers (aligned with Heat steps), and coin reward/cost data for all 14 items.
+- **Coin Economy & Item Buffs:** A dynamic currency system where players gain coins for successful item hits or passing opponents, and can spend coins during the End of Turn phase for Heat, Upgrades, or Sponsorships.
 - **Real-time Weight Analytics:** Live readout of item probabilities on the spinner page and interactive weight-curve graphs on the Item Details page.
 - **Item Mechanical Descriptions:** Detailed explanations of each item's effect within the physical board game, displayed automatically after a spin and on the analytics page.
 - **Python Logic Engine:** A backend that handles the probability distribution of items (e.g., players further back get more powerful "catch-up" items).
