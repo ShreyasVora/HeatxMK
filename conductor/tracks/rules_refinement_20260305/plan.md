@@ -2,21 +2,21 @@
 
 This plan covers the transition of item mechanics from placeholders to player-refined rules, including turn timing and coin integration.
 
-## Phase 1: Collaborative Refinement Workshop
+## Phase 1: Collaborative Refinement Workshop [checkpoint: ff99c4a]
 This phase is an interactive process between the AI and the User to finalize the mechanics for all 14 items.
 
-- [ ] **Task: Sequential Item Analysis**
-    - [ ] Prompt user for each item (1-14) with current rules.
-    - [ ] Perform pros/cons analysis on group-drafted suggestions.
-    - [ ] Finalize description, `usage_timing`, `coin_reward`, and `coin_cost`.
-- [ ] **Task: Data Consolidation**
-    - [ ] Create a temporary staging object/file to hold approved rules.
-- [ ] **Task: Conductor - User Manual Verification 'Phase 1: Collaborative Refinement' (Protocol in workflow.md)**
+- [x] **Task: Sequential Item Analysis** (d3a9bb6)
+    - [x] Prompt user for each item (1-14) with current rules.
+    - [x] Perform pros/cons analysis on group-drafted suggestions.
+    - [x] Finalize description, `usage_timing`, `coin_reward`, and `coin_cost`.
+- [x] **Task: Data Consolidation** (d3a9bb6)
+    - [x] Create a temporary staging object/file to hold approved rules.
+- [x] **Task: Conductor - User Manual Verification 'Phase 1: Collaborative Refinement' (Protocol in workflow.md)** (ff99c4a)
 
 ## Phase 2: Configuration & Backend Updates
 Apply the finalized rules to the data layer and update tests.
 
-- [ ] **Task: Update `items_config.json`**
+- [~] **Task: Update `items_config.json`**
     - [ ] Add new fields: `usage_timing`, `coin_reward`, `coin_cost`, and `balancing_notes`.
     - [ ] Overwrite old descriptions with finalized versions.
 - [ ] **Task: Update ItemEngine Tests**
