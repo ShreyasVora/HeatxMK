@@ -9,7 +9,7 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Replace item names with images throughout the UI**
+- [x] **Track: Replace item names with images throughout the UI**
   *Link: [./tracks/item_images_20260301/](./tracks/item_images_20260301/)*
 
 
