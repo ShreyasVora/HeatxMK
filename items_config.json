@@ -102,7 +102,7 @@
     },
     {
       "name": "Ice Flower",
-      "description": "Use while in <b>3rd Gear or higher</b>. Choose one: Move <b>2 Heat</b> from your Hand to your Engine, OR move <b>1 Heat</b> from the Box to your Engine.",
+      "description": "Use while in <b>3rd Gear or higher</b>. Choose one: Move <b>2 Heat</b> from your Hand to your Engine, OR add <b>1 Heat</b> from the Box to your Engine.",
       "image_path": "images/items/IceFlower.png",
       "weight_curve": [[0, 0], [3, 0], [5, 20], [9, 0], [30, 0]],
       "usage_timing": "Step 6: React",

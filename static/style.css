@@ -512,44 +512,65 @@ main {
     font-size: 0.875rem;
 }
 
-button:disabled {
+/* Button Redesign */
+.button-group {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 1rem;
-    margin-bottom: 0.75rem;
+    margin-top: 1rem;
 }
 
-.desc-img {
-    height: 48px;
-    width: auto;
-    flex-shrink: 0;
-    object-fit: contain;
+button {
+    width: 100%;
+    padding: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spin-button {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+#spin-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    background: linear-gradient(135deg, #0088ff 0%, #0066d4 100%);
+}
+
+#spin-button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
+}
+
+button.secondary-btn {
+    background: white;
+    color: #495057;
+    border: 2px solid #e9ecef;
+}
+
+button.secondary-btn:hover:not(:disabled) {
+    border-color: #adb5bd;
+    background: #f8f9fa;
+    color: var(--primary-color);
 }
 
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-#spin-button {
-    margin-bottom: 0.75rem;
-}
-
-button.secondary-btn {
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-    border: 1px solid #ced4da;
-}
-
-button.secondary-btn:hover {
-    background-color: #dee2e6;
-}
-button:active {
-    transform: scale(0.98);
-}
-
-button:hover {
-    opacity: 0.9;
+    filter: grayscale(1);
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 footer {
