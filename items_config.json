@@ -122,7 +122,7 @@
     },
     {
       "name": "Blooper",
-      "description": "Ink all opponents ahead of you. <b>Vision:</b> Affected players must play their next round with their hand <b>face-up</b>. <b>Confusion:</b> Force the opponent directly ahead to shift their gear stick 1 position. <b>Ink Cloud (Pay 3 Coins):</b> Shift the gear stick of the second car ahead as well.",
+      "description": "Ink all opponents ahead of you. <b>Vision (Blind Play):</b> Affected players must play their next round with their hand <b>face-down</b> (choosing cards without looking). If they pick an illegal card (e.g., an Upgrade they cannot pay for, or a Heat card), they must redraw. <b>Confusion:</b> Force the opponent directly ahead to shift their gear stick 1 position. <b>Ink Cloud (Pay 3 Coins):</b> Shift the gear stick of the second car ahead as well.",
       "image_path": "images/items/Blooper.png",
       "weight_curve": [[0, 0], [6, 0], [12, 20], [30, 10]],
       "usage_timing": "Step 6: React",
