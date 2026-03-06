@@ -317,26 +317,93 @@ main {
 
 .spinner-container {
     margin-bottom: 2rem;
-    padding: 2rem;
+    padding: 1rem;
     background: var(--bg-color);
-    border-radius: 0.75rem;
-    min-height: 120px;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-.item-display {
-    font-size: 2rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    color: var(--primary-color);
-    transition: transform 0.2s, filter 0.2s;
+.wheel-outer-container {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 1rem auto;
+}
+
+.wheel-canvas-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1), inset 0 0 10px rgba(0,0,0,0.2);
+    overflow: hidden;
+    background: #fff;
+    transition: transform 4s cubic-bezier(0.15, 0, 0.15, 1);
+}
+
+#wheel-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* Start at top */
+}
+
+.wheel-pointer {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    background: #333;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    z-index: 10;
+    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.2));
+}
+
+.item-display-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: white;
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 150px;
-    padding: 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-align: center;
+    z-index: 5;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 6px solid var(--primary-color);
+}
+
+.item-display-overlay.spinning {
+    animation: pulse 1s infinite alternate;
+}
+
+.item-display-overlay .result-img {
+    max-height: 100px;
+    max-width: 100px;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+@keyframes pulse {
+    from { transform: translate(-50%, -50%) scale(1); }
+    to { transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.wheel-slice {
+    stroke: white;
+    stroke-width: 1px;
+}
+
+.wheel-icon {
+    pointer-events: none;
 }
 
 .spinner-img {
@@ -464,19 +531,19 @@ button:disabled {
     cursor: not-allowed;
 }
 
-button {
-    width: 100%;
-    padding: 1.25rem;
-    font-size: 1.125rem;
-    font-weight: 700;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: transform 0.1s, opacity 0.2s;
+#spin-button {
+    margin-bottom: 0.75rem;
 }
 
+button.secondary-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: 1px solid #ced4da;
+}
+
+button.secondary-btn:hover {
+    background-color: #dee2e6;
+}
 button:active {
     transform: scale(0.98);
 }

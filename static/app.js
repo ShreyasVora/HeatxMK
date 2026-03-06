@@ -194,6 +194,86 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const itemColors = {
+        "Banana": "#FFE135",
+        "Red Shell": "#FF0000",
+        "Mushroom": "#E74C3C",
+        "Star": "#F1C40F",
+        "Blue Shell": "#3498DB",
+        "Rocket": "#34495E",
+        "Yellow Coin": "#F39C12",
+        "Red Coin": "#C0392B",
+        "Green Shell": "#2ECC71",
+        "Fire Flower": "#E67E22",
+        "Ice Flower": "#AED6F1",
+        "Lightning": "#9B59B6",
+        "Blooper": "#2C3E50",
+        "Golden Mushroom": "#D4AC0D"
+    };
+
+    let currentRotation = 0;
+    let wheelWeights = [];
+
+    function drawWheel(weights) {
+        const svg = document.getElementById('wheel-svg');
+        svg.innerHTML = '';
+        wheelWeights = weights;
+
+        if (weights.length === 0) return;
+
+        let cumulativePercent = 0;
+        const centerX = 250;
+        const centerY = 250;
+        const radius = 240;
+
+        weights.forEach((item, index) => {
+            const startAngle = (cumulativePercent / 100) * 360;
+            const endAngle = ((cumulativePercent + item.chance) / 100) * 360;
+            cumulativePercent += item.chance;
+
+            // Save angles for landing calculation
+            item.startAngle = startAngle;
+            item.endAngle = endAngle;
+
+            // Create Path
+            const x1 = centerX + radius * Math.cos(Math.PI * startAngle / 180);
+            const y1 = centerY + radius * Math.sin(Math.PI * startAngle / 180);
+            const x2 = centerX + radius * Math.cos(Math.PI * endAngle / 180);
+            const y2 = centerY + radius * Math.sin(Math.PI * endAngle / 180);
+
+            const largeArcFlag = item.chance > 50 ? 1 : 0;
+            const pathData = `M ${centerX} ${centerY} L ${x1} ${y1} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${x2} ${y2} Z`;
+
+            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            path.setAttribute("d", pathData);
+            path.setAttribute("fill", itemColors[item.name] || "#ccc");
+            path.setAttribute("class", "wheel-slice");
+            svg.appendChild(path);
+
+            // Add Icon
+            if (item.chance > 4) {
+                const midAngle = startAngle + (item.chance / 2);
+                const iconRadius = radius * 0.65;
+                const iconX = centerX + iconRadius * Math.cos(Math.PI * midAngle / 180);
+                const iconY = centerY + iconRadius * Math.sin(Math.PI * midAngle / 180);
+
+                const itemMetadata = itemConfig ? itemConfig.items.find(i => i.name === item.name) : null;
+                const imgSrc = getImagePath(itemMetadata);
+
+                const image = document.createElementNS("http://www.w3.org/2000/svg", "image");
+                image.setAttributeNS("http://www.w3.org/1999/xlink", "href", imgSrc);
+                image.setAttribute("x", iconX - 35);
+                image.setAttribute("y", iconY - 35);
+                image.setAttribute("width", "70");
+                image.setAttribute("height", "70");
+                image.setAttribute("class", "wheel-icon");
+                // Rotate icon to face center
+                image.setAttribute("transform", `rotate(${midAngle + 90}, ${iconX}, ${iconY})`);
+                svg.appendChild(image);
+            }
+        });
+    }
+
     // Spinner Logic
     async function updateWeights() {
         const distance = parseInt(distanceInput.value) || 0;
@@ -203,6 +283,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`/api/weights?distance=${distance}`);
             const data = await response.json();
             
+            drawWheel(data.weights);
+
             weightList.innerHTML = data.weights.map(item => {
                 const itemMetadata = itemConfig ? itemConfig.items.find(i => i.name === item.name) : null;
                 const imgSrc = getImagePath(itemMetadata);
@@ -223,35 +305,56 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await responsePromise;
             const data = await response.json();
-            const imgSrc = getImagePath(data.metadata);
             
-            itemDisplay.innerHTML = `<img src="${imgSrc}" alt="${data.name}" class="result-img">`;
-            itemDisplay.classList.remove('spinning');
-            itemDisplay.classList.add('selected');
+            // Calculate landing angle
+            const item = wheelWeights.find(w => w.name === data.name);
+            if (item) {
+                const targetSliceAngle = (item.startAngle + item.endAngle) / 2;
+                // Wheel is rotated -90 initially to make 0deg be at top.
+                // We want targetSliceAngle to be at the top (0deg in SVG space).
+                // But the pointer is at the top.
+                // The wheel rotates clockwise.
+                // If slice is at 90deg, we need to rotate wheel 270deg (or -90) to put it at top.
+                // Calculation: (360 - targetSliceAngle)
+                const extraRotation = (360 - targetSliceAngle);
+                
+                // Add 5-10 full rotations
+                currentRotation += (360 * 5) + extraRotation - (currentRotation % 360);
+                
+                const wheelContainer = document.querySelector('.wheel-canvas-container');
+                wheelContainer.style.transform = `rotate(${currentRotation}deg)`;
 
-            if (data.metadata) {
-                const desc = data.metadata.description || "No description available.";
-                infoPanel.innerHTML = `
-                    <div class="desc-header">
-                        <img src="${imgSrc}" alt="${data.name}" class="desc-img">
-                        <div class="header-text">
-                            <strong>${data.name}</strong>
-                            <span class="timing-badge">${data.metadata.usage_timing || "N/A"}</span>
-                        </div>
-                    </div>
-                    <p>${desc}</p>
-                    <div class="coin-meta">
-                        ${data.metadata.coin_reward !== "0" ? `<span class="reward">Reward: ${data.metadata.coin_reward}</span>` : ""}
-                        ${data.metadata.coin_cost !== "0" ? `<span class="cost">Cost: ${data.metadata.coin_cost}</span>` : ""}
-                    </div>
-                `;
-                infoPanel.style.display = 'block';
+                // Wait for animation
+                setTimeout(async () => {
+                    const imgSrc = getImagePath(data.metadata);
+                    
+                    itemDisplay.innerHTML = `<img src="${imgSrc}" alt="${data.name}" class="result-img">`;
+                    itemDisplay.classList.remove('spinning');
+                    itemDisplay.classList.add('selected');
+
+                    if (data.metadata) {
+                        const desc = data.metadata.description || "No description available.";
+                        infoPanel.innerHTML = `
+                            <div class="desc-header">
+                                <img src="${imgSrc}" alt="${data.name}" class="desc-img">
+                                <div class="header-text">
+                                    <strong>${data.name}</strong>
+                                    <span class="timing-badge">${data.metadata.usage_timing || "N/A"}</span>
+                                </div>
+                            </div>
+                            <p>${desc}</p>
+                            <div class="coin-meta">
+                                ${data.metadata.coin_reward !== "0" ? `<span class="reward">Reward: ${data.metadata.coin_reward}</span>` : ""}
+                                ${data.metadata.coin_cost !== "0" ? `<span class="cost">Cost: ${data.metadata.coin_cost}</span>` : ""}
+                            </div>
+                        `;
+                        infoPanel.style.display = 'block';
+                    }
+                    
+                    spinButton.disabled = false;
+                    setTimeout(() => itemDisplay.classList.remove('selected'), 1000);
+                }, 4000); // Match CSS transition
             }
-            
-            setTimeout(() => {
-                spinButton.disabled = false;
-                itemDisplay.classList.remove('selected');
-            }, 1000);
         } catch (error) {
             console.error("Finalize spin failed:", error);
             itemDisplay.textContent = "API ERROR";
@@ -278,21 +381,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
         spinButton.disabled = true;
         itemDisplay.classList.add('spinning');
+        itemDisplay.textContent = "SPINNING";
         infoPanel.style.display = 'none';
 
-        try {
-            const responsePromise = fetch(`/api/item?distance=${distance}`);
-            let cycleCount = 0;
-            const interval = setInterval(() => {
-                if (itemConfig && itemConfig.items.length > 0) {
-                    const randomItem = itemConfig.items[Math.floor(Math.random() * itemConfig.items.length)];
-                    itemDisplay.innerHTML = `<img src="${randomItem.image_path}" alt="" class="spinner-img">`;
-                }
-                if (++cycleCount >= 15) { clearInterval(interval); finalizeSpin(responsePromise); }
-            }, 100);
-        } catch (error) {
-            spinButton.disabled = false;
-        }
+        const responsePromise = fetch(`/api/item?distance=${distance}`);
+        finalizeSpin(responsePromise);
+    });
+
+    const clearButton = document.getElementById('clear-button');
+
+    clearButton.addEventListener('click', () => {
+        itemDisplay.innerHTML = "READY?";
+        itemDisplay.classList.remove('selected', 'spinning');
+        infoPanel.style.display = 'none';
+        spinButton.disabled = false;
     });
 
     // Global Hooks for Testing

@@ -28,10 +28,19 @@
                 </div>
 
                 <div class="spinner-container">
-                    <div id="item-display" class="item-display">READY?</div>
+                    <div class="wheel-outer-container">
+                        <div id="wheel-pointer" class="wheel-pointer"></div>
+                        <div id="wheel-canvas-container" class="wheel-canvas-container">
+                            <svg id="wheel-svg" viewBox="0 0 500 500">
+                                <!-- Slices will be dynamically inserted here -->
+                            </svg>
+                        </div>
+                        <div id="item-display" class="item-display-overlay">READY?</div>
+                    </div>
                 </div>
 
                 <button id="spin-button">GET ITEM</button>
+                <button id="clear-button" class="secondary-btn">CLEAR</button>
 
                 <div id="item-info-panel" class="info-panel" style="display: none;">
                     <!-- Description will be inserted here -->
