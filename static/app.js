@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Mushroom": "#E74C3C",
         "Star": "#F1C40F",
         "Blue Shell": "#3498DB",
-        "Rocket": "#34495E",
+        "Bullet Bill": "#34495E",
         "Yellow Coin": "#F39C12",
         "Red Coin": "#C0392B",
         "Green Shell": "#2ECC71",

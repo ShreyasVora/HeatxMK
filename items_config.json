@@ -51,9 +51,9 @@
       "balancing_notes": "Added 'Splash Zone' mechanic to mimic the Mario Kart explosion. Rewards the user heavily for hitting a bunched-up lead pack."
     },
     {
-      "name": "Rocket",
+      "name": "Bullet Bill",
       "description": "Blast forward! <b>Base Effect:</b> Move +10 spaces. You may <b>ignore all Corner Speed Limits</b> for this round (pay 0 Heat). <b>If in 1st Place:</b> Move +3 spaces instead.",
-      "image_path": "images/items/Rocket.png",
+      "image_path": "images/items/BulletBill.png",
       "weight_curve": [[0, 0], [12, 0], [17, 50], [20, 90], [30, 70]],
       "usage_timing": "Step 6: React",
       "coin_reward": "1 per position gained (before corner checks)",
@@ -112,7 +112,7 @@
     },
     {
       "name": "Lightning",
-      "description": "Shock every opponent ahead of you. <b>Base Effect:</b> Targets shift down 1 gear. <b>Overcharge (Pay 2 Coins):</b> Tiered gears down (Dist 0-6: 1 gear, 7-16: 2 gears, 17+: 3 gears). <b>All Hits:</b> Targets discard 1 card from hand.",
+      "description": "Shock every opponent ahead of you. <b>Base Effect:</b> Targets shift down 1 gear. <b>Overcharge (Pay 2 Coins):</b> Tiered gears down (Dist 0-6: 1 gear, 7-16: 2 gears, 17+: 3 gears). <b>All Hits:</b> Targets discard 1 <b>random</b> card from hand.",
       "image_path": "images/items/Lightning.png",
       "weight_curve": [[0, 0], [12, 0], [17, 10], [20, 10], [30, 0]],
       "usage_timing": "Step 6: React",
