@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             options: {
                 responsive: true, maintainAspectRatio: false,
                 scales: {
-                    x: { type: 'linear', title: { display: true, text: 'Distance' }, min: 0, max: 120 },
+                    x: { type: 'linear', title: { display: true, text: 'Distance' }, min: 0, max: 30 },
                     y: { title: { display: true, text: 'Weight' }, beginAtZero: true }
                 }
             }
