@@ -575,6 +575,13 @@ button:disabled {
 
 footer {
     margin-top: 2rem;
+    padding-bottom: 2rem;
     font-size: 0.75rem;
     color: #adb5bd;
+}
+
+.version {
+    margin-top: 0.5rem;
+    opacity: 0.6;
+    font-family: monospace;
 }
