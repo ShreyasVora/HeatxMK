@@ -395,6 +395,17 @@ document.addEventListener('DOMContentLoaded', () => {
         itemDisplay.classList.remove('selected', 'spinning');
         infoPanel.style.display = 'none';
         spinButton.disabled = false;
+
+        // Reset wheel rotation
+        currentRotation = 0;
+        const wheelContainer = document.querySelector('.wheel-canvas-container');
+        wheelContainer.style.transition = 'transform 1s ease-in-out';
+        wheelContainer.style.transform = `rotate(0deg)`;
+        
+        // Restore original slow transition after reset finishes
+        setTimeout(() => {
+            wheelContainer.style.transition = 'transform 4s cubic-bezier(0.15, 0, 0.15, 1)';
+        }, 1000);
     });
 
     // Global Hooks for Testing
