@@ -66,6 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const response = await fetch('/api/config');
                 itemConfig = await response.json();
+                
+                // Set version display
+                const versionDisplay = document.getElementById('version-display');
+                if (versionDisplay && itemConfig.version) {
+                    versionDisplay.textContent = `v${itemConfig.version}`;
+                }
             } catch (error) {
                 console.error("Failed to load item config:", error);
             }
