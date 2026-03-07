@@ -2,30 +2,30 @@
   "items": [
     {
       "name": "Banana",
-      "description": "Place a banana token on the space <b>immediately behind</b> your car. If an opponent ends their movement on that space this round, they must add <b>1 Stress card</b> from the box to their hand.",
+      "description": "Place a banana token on the space <b>immediately behind</b> your car. If an opponent ends their movement on that space this round, they must add <b>1 Stress card</b> from the box to their hand. If this is dropped on someone or if they are driving past, they must roll a <b>d6</b> and if a 1 is rolled, they must go back 1 space.",
       "image_path": "images/items/Banana.png",
       "weight_curve": [[0, 60], [3, 15], [8, 0], [30, 0]],
-      "usage_timing": "Step 4: Move (After movement)",
-      "coin_reward": "2 (Gained if opponent is hit)",
+      "usage_timing": "Step 4: Adrenaline (After movement)",
+      "coin_reward": "3 (Gained if opponent is hit)",
       "coin_cost": "0",
       "balancing_notes": "Transitioned from Heat/Spin-out penalty to deck-dilution (Stress) penalty. Added coin incentive for strategic placement."
     },
     {
       "name": "Red Shell",
-      "description": "Fire a Red Shell (Forward or Backward, max 20 spaces). <b>Base Effect:</b> Target shifts down <b>1 gear</b> (min 1st). If already in 1st, they take <b>1 Stress</b> instead. <b>Super Hit (Pay 3 Coins):</b> Target also moves <b>backwards 2 spaces</b>. <b>Shielding:</b> While holding, discard to cancel an incoming Shell or Fireball.",
+      "description": "Fire a Red Shell (Forward or Backward, max 15 spaces). Target shifts down <b>1 gear</b> (min 1st). If already in 1st, they take <b>1 Stress</b> instead. <b>Shielding:</b> While holding, discard to cancel an incoming Shell or Fireball.",
       "image_path": "images/items/RedShell.png",
       "weight_curve": [[0, 5], [2, 5], [5, 45], [8, 30], [10, 10], [12, 0], [30, 0]],
-      "usage_timing": "Step 6: React (Firing) / Any time (Blocking)",
+      "usage_timing": "Step 5: React (Firing) / Any time (Blocking)",
       "coin_reward": "2 (Gained when an opponent is hit)",
-      "coin_cost": "0 for Base / 3 for Super Hit",
-      "balancing_notes": "Added tiered power and passive defense utility."
+      "coin_cost": "0",
+      "balancing_notes": "Removed tiered power as was too OP. Added passive defense utility."
     },
     {
       "name": "Mushroom",
       "description": "Perform a <b>Free Boost</b>. Flip the top card of your deck and move that many spaces. This does <b>not cost Heat</b> and <b>does not count</b> toward your Speed for corner checks. <b>Double (Pay 2 Coins):</b> Flip two cards, choose the higher value. <b>Triple (Pay 5 Coins):</b> Flip three cards, move sum of two highest.",
       "image_path": "images/items/Mushroom.png",
       "weight_curve": [[0, 0], [3, 5], [5, 30], [8, 50], [10, 20], [14, 0], [30, 0]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "0",
       "coin_cost": "0 / 2 / 5 (Tiered)",
       "balancing_notes": "Integrated with Heat boost mechanic while bypassing Heat cost and Corner Speed checks. Multi-card flipping added as a coin sink."
@@ -45,7 +45,7 @@
       "description": "Launch a Blue Shell at the <b>Race Leader</b>. The leader and any car on the <b>same space</b> or <b>1 space behind</b> must immediately <b>shift down to 1st Gear</b> (min 1st).",
       "image_path": "images/items/BlueShell.png",
       "weight_curve": [[0, 0], [10, 0], [12, 5], [30, 5]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "3 per car hit",
       "coin_cost": "0",
       "balancing_notes": "Added 'Splash Zone' mechanic to mimic the Mario Kart explosion. Rewards the user heavily for hitting a bunched-up lead pack."
@@ -55,27 +55,27 @@
       "description": "Blast forward! <b>Base Effect:</b> Move +10 spaces. You may <b>ignore all Corner Speed Limits</b> for this round (pay 0 Heat). <b>If in 1st Place:</b> Move +3 spaces instead.",
       "image_path": "images/items/BulletBill.png",
       "weight_curve": [[0, 0], [12, 0], [17, 50], [20, 90], [30, 70]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "1 per position gained (before corner checks)",
       "coin_cost": "0",
       "balancing_notes": "High-power catch-up item. Includes a nerf for 1st place to prevent runaway leads if someone manages to hoard one."
     },
     {
       "name": "Yellow Coin",
-      "description": "Gain <b>5 Coins</b> immediately. You may also move <b>+1 space</b> now. <b>Spend Coins (End of Turn):</b> 5 for 1 Heat, 7 for a Sponsorship, 10 for an Upgrade (Choose 1 of 2).",
+      "description": "Gain <b>5 Coins</b> immediately. You may also move <b>+1 space</b> now. <b>Spend Coins (End of Turn):</b> 5 for 1 Heat, 7 for a Sponsorship, 10 for an Upgrade (Choose 1 of 2). Purchased cards are shuffled into your draw pile. Coins can also be carried onto the next race if in a championship.",
       "image_path": "images/items/YellowCoin.png",
       "weight_curve": [[0, 40], [3, 20], [30, 20]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "5",
       "coin_cost": "0",
       "balancing_notes": "Shifted to primary currency driver. Added a small movement bonus to make it useful for immediate positioning."
     },
     {
       "name": "Red Coin",
-      "description": "Gain <b>7 Coins</b> immediately. This is enough to purchase a <b>Sponsorship Card</b> during your next End of Turn phase.",
+      "description": "Gain <b>7 Coins</b> immediately. You may also choose to move +1 space now. See yellow coin description for costs of cards.",
       "image_path": "images/items/RedCoin.png",
       "weight_curve": [[0, 10], [12, 20], [30, 10]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "7",
       "coin_cost": "0",
       "balancing_notes": "Reduced from 10 to 7 to prevent instant permanent Upgrades. Aligned with Sponsorship cost to create a tactical choice."
@@ -85,7 +85,7 @@
       "description": "Fire a Green Shell forwards or backwards in your current lane. It travels <b>3 spaces</b>, hitting <b>EVERY</b> car in its path. <b>Effect:</b> Targets shift down 1 gear (min 1st). <b>Shielding:</b> While holding, discard to cancel an incoming Shell or Fireball. <b>Snipe (Pay 2 Coins):</b> Increase range to 6 spaces.",
       "image_path": "images/items/GreenShell.png",
       "weight_curve": [[0, 50], [4, 25], [10, 0], [30, 0]],
-      "usage_timing": "Step 6: React (Firing) / Any time (Blocking)",
+      "usage_timing": "Step 5: React (Firing) / Any time (Blocking)",
       "coin_reward": "1 per car hit",
       "coin_cost": "0 for Base / 2 for Snipe",
       "balancing_notes": "Piercing multi-hit mechanic added. Range is intentionally short to balance the lane-wide hit potential."
@@ -95,7 +95,7 @@
       "description": "Launch a wide wave of fireballs. It affects <b>EVERY</b> car in the <b>3 spaces</b> directly ahead of you (all lanes). <b>Effect:</b> Affected opponents must move 1 Heat from their Engine to their Discard pile. If they have no Heat, they take 1 Stress instead.",
       "image_path": "images/items/FireFlower.png",
       "weight_curve": [[0, 0], [3, 0], [5, 20], [9, 0], [30, 0]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "1 per car hit",
       "coin_cost": "0",
       "balancing_notes": "Standardized as an area-of-effect disruption item. Attacks Heat supply to limit opponents' future movement options."
@@ -105,7 +105,7 @@
       "description": "Use while in <b>3rd Gear or higher</b>. Choose one: Move <b>2 Heat</b> from your Hand to your Engine, OR add <b>1 Heat</b> from the Box to your Engine.",
       "image_path": "images/items/IceFlower.png",
       "weight_curve": [[0, 0], [3, 0], [5, 20], [9, 0], [30, 0]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "0",
       "coin_cost": "0",
       "balancing_notes": "Drafted by user. Primarily a defensive/stabilizing item for front-runners to manage heat while maintaining speed."
@@ -115,19 +115,19 @@
       "description": "Shock every opponent ahead of you. <b>Base Effect:</b> Targets shift down 1 gear. <b>Overcharge (Pay 2 Coins):</b> Tiered gears down (Dist 0-6: 1 gear, 7-16: 2 gears, 17+: 3 gears). <b>All Hits:</b> Targets discard 1 <b>random</b> card from hand.",
       "image_path": "images/items/Lightning.png",
       "weight_curve": [[0, 0], [12, 0], [17, 10], [20, 10], [30, 0]],
-      "usage_timing": "Step 6: React",
+      "usage_timing": "Step 5: React",
       "coin_reward": "1 per car hit",
       "coin_cost": "0 for Base / 2 for Overcharge",
       "balancing_notes": "Balanced catch-up item with a coin-based 'super' mode to reward earlier tactical play."
     },
     {
       "name": "Blooper",
-      "description": "Ink all opponents ahead of you. <b>Vision (Blind Play):</b> Affected players must play their next round with their hand <b>face-down</b> (choosing cards without looking). If they pick an illegal card (e.g., an Upgrade they cannot pay for, or a Heat card), they must redraw. <b>Confusion:</b> Force the opponent directly ahead to shift their gear stick 1 position. <b>Ink Cloud (Pay 3 Coins):</b> Shift the gear stick of the second car ahead as well.",
+      "description": "Ink all opponents ahead of you. <b>Vision (Blind Play):</b> Affected players must shuffle and choose a card <b>without looking</b> and place it on the table, then play the rest of their cards equal to their gear. If they pick an illegal card (e.g., an Upgrade they cannot pay for, or a Heat card), they must redraw. Gain two coins for each car that exceeds a corner check on the next round.",
       "image_path": "images/items/Blooper.png",
       "weight_curve": [[0, 0], [6, 0], [12, 20], [30, 10]],
-      "usage_timing": "Step 6: React",
-      "coin_reward": "1 per car hit",
-      "coin_cost": "0 for Base / 3 for Ink Cloud",
+      "usage_timing": "Step 5: React",
+      "coin_reward": "2 per speeding car",
+      "coin_cost": "0",
       "balancing_notes": "Combines information denial with direct gear stick sabotage. Lasting 1-round effect."
     },
     {
