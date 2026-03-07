@@ -93,11 +93,11 @@
     },
     {
       "name": "Fire Flower",
-      "description": "Launch a wide wave of fireballs. It affects <b>EVERY</b> car in the <b>3 spaces</b> directly ahead of you (all lanes). <b>Effect:</b> Affected opponents must move 1 Heat from their Engine to their Discard pile. If they have no Heat, they take 1 Stress instead.",
+      "description": "Launch a wide wave of fireballs. It affects <b>EVERY</b> car in the <b>3 spaces</b> directly ahead of you (all lanes). <b>Effect:</b> Affected opponents must move 1 Heat from their Engine to their Discard pile. Has no effect if the opponent has no heat left to pay.",
       "image_path": "images/items/FireFlower.png",
       "weight_curve": [[0, 0], [3, 0], [5, 20], [9, 0], [30, 0]],
       "usage_timing": "Step 5: React",
-      "coin_reward": "1 per car hit",
+      "coin_reward": "1 per car Base / 2 per non-paying user",
       "coin_cost": "0",
       "balancing_notes": "Standardized as an area-of-effect disruption item. Attacks Heat supply to limit opponents' future movement options."
     },
